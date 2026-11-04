@@ -1,0 +1,6 @@
+.DS_Store
+
+# 工具接入由 ok init 在本机生成，不纳入版本
+.codex/
+.cursor/
+.pi/
