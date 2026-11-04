@@ -8,7 +8,7 @@ validity: confirmed
 
 ## Premise
 
-按 [Agent 领域的前提](index.md#premise)，agent 短暂，职责要延续，所以职责一定会换人。交接就是 [Ownership](../primitive/ownership.md) 的转交：任何时刻恰好一个负责人，以接收为准
+按 [Agency 领域的前提](index.md#premise)，agent 短暂，职责要延续，所以职责一定会换人。交接就是 [Ownership](../primitive/ownership.md) 的转交：任何时刻恰好一个负责人，以接收为准
 
 重要内容在产生时就已经写到外面，见 [Record](../primitive/record.md)，交接传递的是责任和指向这些记录的[入口](../primitive/context-pointer.md)
 
@@ -32,7 +32,7 @@ Resume 和中断后的接手，交出方往往已经不在。交接照样成立�
 
 ## Basis
 
-交出的是记录入口：所接的 [Task](../delivery/task.md#information) 或 [Ticket](../delivery/ticket.md)，接收者从这里取得目标、进展、未完责任与未结束的 Effect。只有意图、没有结果的条目，按 [Record 的 Action](../primitive/record.md#action) 对照环境核对
+交出的是记录入口：所接的 [Task](../delivery/task.md#information) 或 [Ticket](../delivery/ticket.md)，接收者从这里取得目标、进展、未完责任与未结束的 Effect。只有打算、没有结果的条目，按 [Record 的 Action](../primitive/record.md#action) 对照环境核对
 
 Delegate 时，另外交代三件只属于这次交接的事：
 

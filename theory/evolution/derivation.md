@@ -24,7 +24,7 @@ validity: confirmed
 - **边界**：原理论的边界在压缩后仍然存在
 - **触发**：只在适用场景触发，正常默认行为保持自由
 - **落实**：必须在中断和疏忽下仍然成立的规则，交给机制落实，不靠 prompt，例如 Effect 登记
-- **分层**：理论写本源，user 的偏好写代称，runtime 写形式，三者不混。换一种 runtime 设计仍然成立的才写进理论。本源之下有不同形式时，理论写明需要 runtime 分别处理，例如 Issue 的 bug 与 feature、Coverage 的颜色标记
+- **分层**：理论写本源，user 的偏好写代称（例如以绿黄红指称 Coverage），runtime 写形式，三者不混。换一种 runtime 设计仍然成立的才写进理论。本源之下有不同形式时，理论写明需要 runtime 分别处理，例如 Issue 的 bug 与 feature、Coverage 的颜色标记
 
 > 例：[Mode](../agency/mode.md) 的 HITL 等待边界，派生后仍是"停住等待"，Mode 只由 user 切换。[Approval](../agency/approval.md) 的带条件批准，派生后仍带着条件
 

@@ -33,7 +33,7 @@ validity: confirmed
 
 一段表达可以同时是其中几种
 
-## Use
+## Document
 
 在文档中，每篇文档有一处断言，是本页核心主张的唯一真源，可以是两三句自然的话，放在读者最先看到的位置。它和 description 怎样分工，见[组织的 Entry](../documentation/organization.md#entry)
 

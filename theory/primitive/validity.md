@@ -8,7 +8,7 @@ validity: confirmed
 
 ## Source
 
-现状只有一个真源：环境本身，例如代码、配置、运行中的资源、外部系统里的数据。描述现状的其他一切都是缓存，包括文档、登记、Task 记录、agent 的记忆与总结
+现状只有一个真源：环境本身，例如代码、配置、运行中的资源、外部系统里的数据，出处见[前提](../premise.md#environment)。描述现状的其他一切都是缓存，包括文档、登记、Task 记录、agent 的记忆与总结
 
 缓存会过时，真源不会。两者不一致时，以环境为准，再更新缓存。下"现在怎样"的结论之前，先辨明手上的信息是不是缓存，必要时回到环境核对
 
@@ -52,9 +52,5 @@ validity: confirmed
 > 例：Worker 修一个 bug，写的测试通过了。但测试 mock 掉了出问题的那一层，修复前跑也会通过，它的通过说明不了 bug 已经修好
 
 证据只覆盖它实际观察的对象、条件与时间。条件变了，旧证据仍是旧条件下的真实观察，它对新情况支持多少，需要重新看
-
-## Use
-
-[Decision](../communication/decision.md) 与 [Approval](../agency/approval.md) 各自展开对应的形态，[Evaluation](../evolution/evaluation.md) 为 `verified` 提供依据。文档在入口标明阶段，见[组织的 Entry](../documentation/organization.md#entry)
 
 [Primitive](index.md)

@@ -17,7 +17,7 @@ validity: confirmed
 
 正文写本模块的对象、关系与依据，用正面陈述。与相邻模块的分界只在需要分界的入口写一次，例如领域 index 的 Scope
 
-本页的核心主张写在[断言](../primitive/assertion.md#use)，正文从它的理由与条件展开
+本页的核心主张写在[断言](../primitive/assertion.md#document)，正文从它的理由与条件展开
 
 建设过程、进度与"本轮"一类措辞由 Git 历史承载，正文只写理论本身
 
@@ -94,7 +94,7 @@ Example 与 Case 是两件事：Example 是正文里说明规则的场景，Case
 
 - **正文用中文**：日常交互与文档正文以中文为主。常见英文单词与技术词汇直接使用，user 阅读无负担
 - **难译的词用英文**：没有贴切中文的词直接用英文，例如 agent、token，不硬译
-- **控制词用英文**：建模的概念及其取值，例如 Handoff 的 Delegate、Effect 的 Byproduct，用英文 leading word。词表同样以英文为主
+- **控制词用英文**：建模的概念及其取值，例如 Handoff 的 Delegate、Effect 的 Byproduct，用英文 leading word。词表同样以英文为主。已定下中文说法的概念，正文用中文，例如判断、批准
 - **可链接、可查询的标识用英文**：各级标题（作为 `#` 锚点）、frontmatter 的键与值、文件名、目录名。标题只写英文，中文说明放在正文
 
 英文风格：

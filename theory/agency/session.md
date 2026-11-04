@@ -8,15 +8,15 @@ validity: confirmed
 
 ## Premise
 
-Mate 负责一个主题，可能持续几周，一个 Task 也可能跨很多天。承载它们的 Session 却很短暂：上下文会满，会被压缩，进程会崩溃，user 也会随手开一个新的
+Mate 负责一个 Task，可能持续几周。承载它的 Session 却很短暂：上下文会满，会被压缩，进程会崩溃，user 也会随手开一个新的
 
 所以 Session 理论守住一条不变式：丢掉任何一个 Session，都不丢任何重要的东西。由此，结束 Session 是常态，照常处理即可
 
-这是 [Agent 领域的前提](index.md#premise)落在职责上。[Effect](effect.md#premise) 处理留在外面的变化，Session 处理要延续下去的职责
+这是 [Agency 领域的前提](index.md#premise)落在职责上。[Effect](effect.md#premise) 处理留在外面的变化，Session 处理要延续下去的职责
 
 ## Identity
 
-身份属于 [Crew](crew.md) 里的角色，Session 只是承载它。一个 Mate 前后可以由许多 Session 承载，一个 Mate 可以负责多个 Task，一个 Task 也可以跨多个 Session。Worker 通常只活在一个 Session 里，随所负责的 Ticket 结束
+身份属于 [Crew](crew.md) 里的角色，Session 只是承载它。一个 Mate 和它的 Task 前后可以由许多 Session 承载。Worker 通常只活在一个 Session 里，随所负责的 Ticket 结束
 
 ## Outside
 

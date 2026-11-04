@@ -32,8 +32,4 @@ validity: confirmed
 
 没有结局的事不能放下。负责人自己要结束时，先为手上的每件事找到结局
 
-## Use
-
-[Crew](../agency/crew.md) 用它组织职责树，[Handoff](../agency/handoff.md) 用它处理交接，[Effect](../agency/effect.md) 用它管理留在外面的变化，[Task](../delivery/task.md) 与 [Closeout](../delivery/closeout.md) 用它管理工作
-
 [Primitive](index.md)

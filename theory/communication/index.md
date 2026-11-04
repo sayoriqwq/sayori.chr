@@ -8,15 +8,15 @@ validity: confirmed
 
 ## Premise
 
-本领域主要出自[前提](../premise.md)中的两个事实：user 无法把意图完整表达出来，user 负责。前者让理解需要对齐，后者让判断只能由 user 作
+本领域主要出自[前提](../premise.md)中的两个事实：user 无法把预期完整表达出来，user 负责。前者让理解需要对齐，后者让判断只能由 user 作
 
 user 只能尽量表意，误解一定会发生，只能经[对齐](../primitive/alignment.md)发现。本领域守住的是：**会影响判断或行动的理解差异，在 user 作判断之前让 user 看到**。agent 交给 user 的每项内容，都按它能不能帮助 user 自己作判断来取舍
 
-[交付](../delivery/index.md)守住同一件事的另一端：交付与意图之间的差异，在交付时让 user 看到
+[交付](../delivery/index.md)守住同一件事的另一端：交付与预期之间的差异，在交付时让 user 看到
 
 ## Scope
 
-本领域处理当下交流的双方：理解是否一致，决定了什么。能否据此行动、缺判断时怎样处置，由 [Agent](../agency/index.md) 回答。回复怎样书写，由[文档](../documentation/index.md)回答
+本领域处理当下交流的双方：理解是否一致，决定了什么。能否据此行动、缺判断时怎样处置，由 [Agency](../agency/index.md) 回答。回复怎样书写，由[文档](../documentation/index.md)回答
 
 ## Modules
 

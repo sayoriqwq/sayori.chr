@@ -10,7 +10,7 @@ validity: confirmed
 
 Spec 交付、Ticket 交回、Task 结束，都要收口，规模随工作大小。Task 结束时多一步：整个域退出注意力
 
-收口与 [Acceptance](acceptance.md)、对外交付是不同的事。收口中的动作仍按 [Approval](../agency/approval.md) 核对
+收口与 [Acceptance](acceptance.md)、对外交付是不同的事。收口中的动作仍按 [Approval](../agency/approval.md) 核对。user 说收口，就批准了删除这次工作留下的 Byproduct，不再留给 user
 
 ## Steps
 
@@ -40,8 +40,8 @@ Spec 交付、Ticket 交回、Task 结束，都要收口，规模随工作大小
 
 | Object | Ending |
 | --- | --- |
-| 延期、未做、Outside 的事项 | 转交：交给谁，记在哪里，对方接收了没有。没有接手的人，交还 user |
-| Byproduct，例如 worktree、分支、临时文件、临时 Ticket | 收回，按 [Effect 的 Ending](../agency/effect.md#ending) |
+| 延期、未做的事项，本来就有的缺陷 | 转交：交给谁，记在哪里，对方接收了没有。没有接手的人，交还 user |
+| Byproduct，例如 worktree、分支、临时文件、备份、归档、临时 Ticket | 收回，按 [Effect 的 Ending](../agency/effect.md#ending) |
 | Intended，例如交付成果与有长期用途的知识 | 转交，先于收回 |
 
 残留的 Byproduct 会被之后的 agent 当成现状，见 [Validity 的 Source](../primitive/validity.md#source)。失败或被阻塞时，保留真实状态。仍在使用的资源，保留到用途结束
@@ -50,12 +50,11 @@ Spec 交付、Ticket 交回、Task 结束，都要收口，规模随工作大小
 
 回执逐项列出，每一项写明范围与状态：
 
-- **范围**：按 [Coverage](coverage.md)。Implied 与 Outside 逐项写明，Agreed 可以简写
+- **范围**：按 [Coverage](coverage.md)。Implied 与 Outside 逐项写明，Agreed 可以简写，user 接受的问题留一行
 - **状态**：做了、没做，以及去向
 
 另外列出：
 
-- **越界**：agent 超出批准的行为，以及怎样纠正
 - **Effect**：收回了什么，转交了什么
 - **阻塞**：还有什么卡住
 

@@ -31,7 +31,7 @@ user 有没有思考，看的是 user 在这一点上有没有亮出自己的判
 | --- | --- | --- |
 | user > agent | user 已有方向 | 只问挡住 agent 跟上的未知，其余照 user 的走 |
 | user = agent | 双方都有未知 | 问得最多，每个选项对等展开理由 |
-| user < agent | agent 组织 | 只问 user 本人才知道的意图、偏好与经历 |
+| user < agent | agent 组织 | 只问 user 本人才知道的预期、偏好与经历 |
 
 关系针对当前问题，随问题变化。user 给出方向的那一点由 user 引领，agent 跟随，发现矛盾仍然指出
 

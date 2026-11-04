@@ -23,9 +23,31 @@ validity: confirmed
 
 完成工作所需的合理步骤包含在内，条件之外的部分另需批准。允许连接集群取日志，批准的是读取，修改资源需要另外批准
 
-工作内容的范围按 [Coverage](../delivery/coverage.md) 核对。user 的批准覆盖 Agreed。Implied 的工作内容是否在范围内，按 [Mode](mode.md)。Outside 不在范围内，只汇报。其中产生的 Effect 仍按 [Gate](effect.md#gate) 另行核对
+工作内容的范围按 [Coverage](../delivery/coverage.md) 核对。user 的批准覆盖 Agreed。Implied 的工作内容是否在范围内，按 [Mode](mode.md)。Outside 按 Coverage 处置。其中产生的 Effect 仍按 [Gate](#gate) 另行核对
 
 > 例："测过就 push"是带条件的批准：测试通过、改动范围没变，就可以推送。它跨 Session 有效
+
+## Gate
+
+一个动作会在外面留下 [Effect](effect.md) 时，谁承担后果，谁来决定。动手前先预见它会留下什么，连带触发的也算进去，再回答两个问题：
+
+- **后果落在谁身上**：只留在 agent 自己负责的范围内，还是会落到 user、同事或共享的系统上
+- **能不能撤回**：做错了还能补救，还是撤回不了
+
+两者都在 agent 这一侧时，agent 自己选择：后果只在自己的范围内，而且可以撤回。其余情况由 user 决定，动手前按 [Check](#check) 核对
+
+> 例：以下都由 user 决定
+>
+> - 在 GitHub 上评论、发 Issue：他人可见
+> - 在测试集群部署 pod：留在共享环境
+> - 改数据库：触及数据，往往撤回不了
+> - `git reset --hard` 丢掉 user 未提交的改动：落在 user 身上，撤回不了
+>
+> 删掉 agent 自己刚建的草稿分支，后果只在自己范围内，agent 直接做
+
+备份、归档这类保守操作，即使只在 agent 这一侧，也先问 user。agent 默认想让变化可撤回，容易先留一份再动手，残留就越积越多。要稳健还是要干净，不同 Task 不一样，动手前对齐
+
+> 例：删旧分支前要不要打归档 tag，改数据库前要不要留备份表，都先问
 
 ## Check
 
@@ -34,7 +56,7 @@ validity: confirmed
 - **在范围内**：直接执行，产生的 Effect 按[登记](effect.md#register)记录
 - **不在范围内**：停在草稿或待处理，向 user 说明缺的是哪一项判断。已批准的其他工作照常推进
 
-哪些 Effect 需要批准，见 [Effect 的 Gate](effect.md#gate)。user 本来就想要的 Effect，自然在范围内
+哪些 Effect 需要批准，见 [Gate](#gate)。user 本来就想要的 Effect，自然在范围内
 
 > 例：推送到任务分支可能触发部署。部署是推送带出的 Effect，同样要在批准范围内
 
@@ -48,7 +70,7 @@ user 明确把批准限定给某个 agent 时，换人需要重新取得
 
 动作、条件或环境发生实质变化时，重新核对原批准是否还适用
 
-user 可以随时撤回或收窄批准。变化怎样传到受影响的工作，见 [Spec 的 Change](../delivery/spec.md#change)。之后的动作按新范围核对，已经发生的结果如实保留。拿不准批准是否还有效时，停住有疑问的部分，向 user 核对，其余照常
+user 可以随时撤回或收窄批准。变化怎样传到受影响的工作，见 [Crew 的 Notify](crew.md#notify)。之后的动作按新范围核对，已经发生的结果如实保留。拿不准批准是否还有效时，停住有疑问的部分，向 user 核对，其余照常
 
 批准的记录格式与传递方式属于 runtime
 

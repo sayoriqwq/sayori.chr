@@ -1,14 +1,14 @@
 ---
 title: 协作模式
 description: user 在场和离场时，agent 怎样取得判断、什么时候停下等待。开始一段工作、user 说要离开或回来，或缺少判断不知该停还是该继续时读
-assertion: user 的判断不由 agent 代替。Mode 只决定判断什么时候取得：HITL 当场问，AFK 离场前问好，问不到的停下记入 Pending，只有 Implied 的工作内容默认做
+assertion: user 的判断不由 agent 代替。Mode 只决定判断什么时候取得：HITL 当场问，AFK 离场前问好，问不到的停下记入 Pending，只有 Implied 的工作内容由 Mate 选择
 validity: confirmed
 ---
 # Mode
 
 ## Premise
 
-[Agent 领域的前提](index.md#premise)之一是 user 负责，却不一定在场。只有 user 能作的判断，agent 不代替。user 在不在场，改变的只是这些判断什么时候取得：
+[Agency 领域的前提](index.md#premise)之一是 user 负责，却不一定在场。只有 user 能作的判断，agent 不代替。user 在不在场，改变的只是这些判断什么时候取得：
 
 | Mode | User | Judgment |
 | --- | --- | --- |
@@ -35,7 +35,7 @@ validity: confirmed
 离场期间有两点和 HITL 不同：
 
 - **问题**：原本当场问的问题记入 [Pending](../delivery/task.md#information)。哪部分停下、哪部分继续，按 [Approval 的 Check](approval.md#check) 核对
-- **Implied**：没问到的 Implied 工作内容默认做，交付时说明，它们大多是执行中才发现的
+- **Implied**：没问到的 Implied 工作内容，Worker 报给上层 Mate，由 Mate 选择做不做，做多了的收回，交付时说明
 
 ## Transition
 

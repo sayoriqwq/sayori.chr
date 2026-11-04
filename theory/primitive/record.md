@@ -19,14 +19,10 @@ validity: confirmed
 | Log | 发生过的事，例如决定、登记、偏差 | 只追加，原条不改 |
 | State | 现在的事实，例如进展、负责人、阻塞 | 持续改写，只保留当前版本 |
 
-Log 里的修改另追加一条，旧条视为 `superseded`，见 [Validity](validity.md#stage)。State 能从 Log 推出时，以 Log 为准
+Log 里的修改另追加一条，写明取代哪一条，原条不动，视为 `superseded`，见 [Validity](validity.md#stage)。State 能从 Log 推出时，以 Log 为准
 
 ## Action
 
-记录一个行动时，先写意图，完成后补上结果。中断后，只有意图、没有结果的条目，对照环境核对实际发生了什么，记录写真实状态
-
-## Use
-
-[Session](../agency/session.md#outside) 用它说明什么要放到外面，[Effect](../agency/effect.md#register) 的登记、[Decision Log](../communication/decision.md#record) 与 [Case](../evolution/case.md) 是 Log，[Task](../delivery/task.md) 的当前记录是 State
+记录一个行动时，先写打算，完成后补上结果。中断后，只有打算、没有结果的条目，对照环境核对实际发生了什么，记录写真实状态
 
 [Primitive](index.md)

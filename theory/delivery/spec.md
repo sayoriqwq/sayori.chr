@@ -33,6 +33,6 @@ Spec 只写已定的内容。还在对齐中的内容留在对话、[Decision Lo
 
 ## Change
 
-已定的决定改变，是一次新的 Decision：按 [Decision 的 Record](../communication/decision.md#record) 追加，更新 Spec 正文，被取代的内容标为 `superseded`。Task 负责人把变化告诉受影响的负责人。已有结果保留原样，按新要求重新验收，还没核对的部分标明待核对。批准的变化同样这样传到受影响的工作
+已定的决定改变，是一次新的 Decision：按 [Decision 的 Record](../communication/decision.md#record) 追加，更新 Spec 正文，被取代的内容标为 `superseded`。Task 负责人按 [Crew 的 Notify](../agency/crew.md#notify) 通知受影响的负责人。已有结果保留原样，按新要求重新验收，还没核对的部分标明待核对
 
 [Delivery](index.md)

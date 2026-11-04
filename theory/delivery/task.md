@@ -1,6 +1,6 @@
 ---
 title: Task
-description: user 正在关注的一个主题怎样保持整体：记录哪些信息、谁负责、进展怎样汇报。开始一个新主题、接手已有工作，或 user 问"做到哪了"时读
+description: user 持续关注的一个域怎样保持整体：记录哪些信息、谁负责、进展怎样汇报。开始关注一件新的事、接手已有工作，或 user 问"做到哪了"时读
 assertion: Task 是 user 注意力的一个域：user 知道自己在做什么，会持续在这里做。它的当前记录让任何负责人都能接上
 validity: confirmed
 ---
@@ -8,7 +8,9 @@ validity: confirmed
 
 ## Identity
 
-user 的注意力极其有限，只能同时关注少数几件事，见[前提](../premise.md)。Task 就是其中的一件：user 知道自己在做什么，会持续回到这里
+user 的注意力极其有限，只能同时关注少数几件事，见[前提](../premise.md)。Task 就是其中的一件：user 知道自己在做什么，会持续回到这里。它由一个 [Mate](../agency/crew.md) 负责，这个 Mate 也是 user 进入它的入口
+
+> 例：基建与清理都可以是 Task，分别由 infra mate 与 cleanup mate 负责，它们都服务于 user 当前想推进的内容
 
 Task 的身份来自 user 的持续关注。交付了几次、开了几个 PR、换了多少 Session 和负责人，它都是同一个 Task。user 不再关注时，Task 结束，见 [Closeout](closeout.md)
 

@@ -40,7 +40,7 @@ flowchart LR
 - **取得**：规则已具备，运行时没有取得或没有使用
 - **环境**：只在特定环境成立，约束留在该环境
 
-修改落在缺口所在的一处。理论修改后，检查受影响的派生。修改理论或 Runtime 按 [Approval](../agency/approval.md) 核对，采用会改变共享的运行方式，按 [Effect 的 Gate](../agency/effect.md#gate) 由 user 决定
+修改落在缺口所在的一处。理论修改后，检查受影响的派生。修改理论或 Runtime 按 [Approval](../agency/approval.md) 核对，采用会改变共享的运行方式，按 [Approval 的 Gate](../agency/approval.md#gate) 由 user 决定
 
 理论页经过审阅，到 `confirmed` 为止。机制是否有效，由[检验](evaluation.md)从实际使用中得出
 

@@ -28,6 +28,7 @@
 | [Validity](theory/primitive/validity.md) | 环境是现状的唯一真源，其余是缓存。信息的约束力：Form、Stage、Evidence |
 | [Focus](theory/primitive/focus.md) | 当前会话围绕的核心内容 |
 | [Alignment](theory/primitive/alignment.md) | 校准理解，直到足以支持判断 |
+| [Load](theory/communication/load.md) | 理解负担由 agent 承担，user 的注意力留给判断 |
 | [Intent](theory/communication/intent.md) | 表达期待的回应：Ask、Explore、Instruct，逐项辨认 |
 | [Leadership](theory/communication/leadership.md) | 判断归 user，准备归 agent：每一点上 user 先判断，agent 再回应 |
 | [Argue](theory/communication/argue.md) | agent 作可信反方，辨清真实诉求 |
@@ -39,11 +40,11 @@
 | [Approval](theory/agency/approval.md) | 具体动作是否在 user 的批准范围内 |
 | [Handoff](theory/agency/handoff.md) | 职责恰好一个负责人，以接收为准：Delegate、Return、Resume |
 | [Effect](theory/agency/effect.md) | 行动后留在外部的变化：始终有负责人、有结局。Pure 行动不留 Effect，Effectful 行动留下 |
-| [Issue](theory/delivery/issue.md) | 现状与期望的差距，写给 user 与同事看 |
+| [Issue](theory/delivery/issue.md) | 现状与预期的差距，写给 user 与同事看 |
 | [Task](theory/delivery/task.md) | user 注意力的一个域，Mate 负责，含 Pending |
 | [Spec](theory/delivery/spec.md) | 交给 agent 执行的说明：已定的决定整理成一份，只综合不编造 |
 | [Ticket](theory/delivery/ticket.md) | 从 Spec 切下的垂直切片，恰好交给一个 Worker，写明阻塞 |
-| [Coverage](theory/delivery/coverage.md) | 事项与这次工作的关系：Agreed、Implied、Outside |
+| [Coverage](theory/delivery/coverage.md) | 事项与 user 预期的关系：Agreed、Implied、Outside，约束范围并决定汇报什么 |
 | [Acceptance](theory/delivery/acceptance.md) | 用环境证据对照 Spec 或 Task 的记录核对做完，不看报告 |
 | [Closeout](theory/delivery/closeout.md) | 工作结束时收口：复盘、结局、逐项回执 |
 | [Todo](theory/delivery/task.md#identity) | 当前 Session 内的待办，跨 Session 以 Task 为准 |
@@ -55,6 +56,7 @@
 | [Leading Word](theory/documentation/writing.md#language) | 模型已理解的紧凑词语，锚定同一概念或行为 |
 | [Derivation](theory/evolution/derivation.md) | 将 Theory 转成自包含的 Runtime |
 | [Case](theory/evolution/case.md) | 一次偏差的可检查记录，只追加 |
+| [Evaluation](theory/evolution/evaluation.md) | 用证据看一项修改是否带来值得保留的改善 |
 
 ## Special Files
 
@@ -76,7 +78,7 @@
 - **修订**：从整体含义出发 patch，新内容归入现有结构并改写相应段落。追加式写作只用于 Decision Log、Case、Effect 登记等日志类记录
 - **层级**：新增目录、分类或条目前先确定层级。同一层按同一维度并列，细分放到所属条目下面
 - **精简**：每个意思一处权威位置。删去后理解不变的句子，整句删去
-- **语言**：正文中文，常见英文与技术词直接用，难译的词直接用英文，例如 agent、token。控制词（建模概念及其取值）用英文。标题、frontmatter、文件名与目录名用英文
+- **语言**：正文中文，常见英文与技术词直接用，难译的词直接用英文，例如 agent、token。控制词（建模概念及其取值）用英文，已定下中文说法的概念正文用中文，例如判断、批准。标题、frontmatter、文件名与目录名用英文
 - **用词**：已有词汇或已定义的内容沿用原说法，不另造同类表述。例如动作放行统一叫批准，行动造成的变化统一叫 Effect。这条是本仓的约束，见 [Convergence](ok/convergence.md#vocabulary)
 - **英文风格**：标识用小写与连字符，建模概念首字母大写，例如 `special-filenames.md`、Effect
 
