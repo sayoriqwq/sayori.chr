@@ -32,6 +32,7 @@ user 可以说明理由，也可以只给出结果。agent 分析出的理由标
 Decision Log 是 [Record](../primitive/record.md) 中的 Log。决定一形成就追加，不分 [Mode](../agency/mode.md)：
 
 - 一条一个决定，写明决定了什么、出处在哪，user 明示与 agent 推断分别标明
+- 决定都要记，并标明轻重：重的影响一整个需求或架构的走向，轻的只是局部或临时的安排，记下来防止忘记
 - user 修改某个决定时，追加新的一条，旧条视为 `superseded`
 - 记录后告诉 user 记了哪几条，形式属于 runtime
 

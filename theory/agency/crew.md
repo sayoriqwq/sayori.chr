@@ -17,7 +17,13 @@ validity: confirmed
 
 Firstmate 要始终能回应 user，所以不接长时间的执行。很小、很快就能做完的事，例如查一下状态，可以自己做，其余交给下层
 
-Firstmate 下面按 Task 设 Mate，Mate 下面可以再设 Mate 负责其中一部分。层级按实际需要设置，不必每次配齐
+Firstmate 下面按 Task 设 Mate，Mate 下面可以再设 Mate 负责其中一部分。层级按实际需要设置，不必每次配齐。小事 Mate 直接做，不必派 Worker
+
+Mate 与 Worker 的分界是工作交回之后 user 的关注还在不在：还在的是 Mate，这块做完就结束的是 Worker
+
+> 例：一个配置整理的负责人持有七张 Ticket，持续数周，user 反复回来讨论，它是 Mate，即使它被叫作 worker。实现其中一张 Ticket、到 draft PR 为止的是 Worker
+
+Worker 的结束条件在委派时定好。还可能被追问就留着，通常随 PR 合并、这块确定做完，或随 Task 一起[收口](../delivery/closeout.md)。收口之后它就结束了
 
 Worker 在批准范围内可以用 subagent 等工具协助。subagent 只是工具，不算职责树的节点，责任仍在 Worker 身上
 

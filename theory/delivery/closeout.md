@@ -1,6 +1,6 @@
 ---
 title: 收口
-description: 一件工作结束时怎样收尾：复盘、让剩余职责与 Effect 都有结局、给 user 回执。Spec 交付、Ticket 交回、PR 合并，或一个 Task 要结束时读
+description: 一件工作结束时怎样收尾：复盘、让剩余职责与 Effect 都有结局、给 user 回执。Spec 交付、Worker 到达结束条件、PR 合并，或一个 Task 要结束时读
 assertion: 一件工作结束时收口：经验有去处，剩余职责与 Effect 都有结局，user 收到逐项回执。Task 结束时，整个域退出注意力
 validity: confirmed
 ---
@@ -8,7 +8,7 @@ validity: confirmed
 
 ## When
 
-Spec 交付、Ticket 交回、Task 结束，都要收口，规模随工作大小。Task 结束时多一步：整个域退出注意力
+Spec 交付、Worker 到达[结束条件](../agency/crew.md#ranks)、Task 结束，都要收口，规模随工作大小。Ticket 交回不等于 Worker 结束，它还可能被追问。Task 结束时多一步：整个域退出注意力
 
 收口与 [Acceptance](acceptance.md)、对外交付是不同的事。收口中的动作仍按 [Approval](../agency/approval.md) 核对。user 说收口，就批准了删除这次工作留下的 Byproduct，不再留给 user
 
