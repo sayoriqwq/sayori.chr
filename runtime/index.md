@@ -34,7 +34,7 @@ validity: candidate
 | Decision 记录后怎样告诉 user | [Decision](../theory/communication/decision.md#record) | [记录](records.md#formats) |
 | Case 的存放、整理与版本 | [Evolution](../theory/evolution/index.md#loop) | [回路](loop.md) |
 | 派生物的出处 | [Derivation](../theory/evolution/derivation.md#provenance) | [回路](loop.md#provenance) |
-| Skill 的载体 | Skill | [消费](consumer.md#package) |
+| Skill 的载体 | [Skill](../theory/skill/index.md) | [消费](consumer.md#package) |
 | Issue 的模板与位置 | [Issue](../theory/delivery/issue.md#selection) | 未定 |
 | Ticket 的位置 | [Ticket](../theory/delivery/ticket.md#composition) | 未定 |
 | Coverage 的标记 | [Coverage](../theory/delivery/coverage.md#expression) | 未定 |
