@@ -14,7 +14,7 @@ validity: confirmed
 
 ## Scope
 
-本领域处理信息本身：怎样组织，为谁书写，怎样书写。信息的约束力是原语 [Validity](../primitive/validity.md)。各领域的信息都由本领域承载。信息放在哪里、怎样注入给 agent（skill、plugin、codemod 等），属于 runtime
+本领域处理信息本身：怎样组织，为谁书写，怎样书写。信息的约束力是原语 [Validity](../primitive/validity.md)。各领域的信息都由本领域承载。信息放在哪里、怎样注入给 agent（plugin、codemod 等），属于 runtime。Skill 的机理见 [Skill](../skill/index.md)，它的载体同样属于 runtime
 
 ## Modules
 

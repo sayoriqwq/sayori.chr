@@ -8,7 +8,7 @@ validity: confirmed
 
 ## Runtime
 
-派生的产物是 Runtime：agent 运行时取得的[上下文](../primitive/context.md)。正常使用所需的规则与条件都在其中取得，不用追读理论。具体项目事实作为显式输入提供。Runtime 的形态与组织由它自己决定
+派生的产物是 Runtime：agent 运行时取得的[上下文](../primitive/context.md)。正常使用所需的规则与条件都在其中取得，不用追读理论。具体项目事实作为显式输入提供。Runtime 的形态与组织由它自己决定。其中 Skill 这种形态见 [Skill](../skill/index.md)
 
 ## Selection
 

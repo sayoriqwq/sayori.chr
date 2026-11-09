@@ -55,6 +55,7 @@
 | [Description](theory/documentation/description.md) | 指向内容自身的指针：当前问题该不该来这里 |
 | [Example](theory/documentation/writing.md#examples) | 说明规则的具体场景，`> 例：` 引用块，可引 Case |
 | [Leading Word](theory/documentation/writing.md#language) | 模型已理解的紧凑词语，锚定同一概念或行为 |
+| [Skill](theory/skill/index.md) | 行为治理单元：在可识别的情境中约束 agent 的做事过程，成立条件是可复发的跑偏 |
 | [Derivation](theory/evolution/derivation.md) | 将 Theory 转成自包含的 Runtime |
 | [Case](theory/evolution/case.md) | 一次偏差的可检查记录，只追加 |
 | [Evaluation](theory/evolution/evaluation.md) | 用证据看一项修改是否带来值得保留的改善 |
