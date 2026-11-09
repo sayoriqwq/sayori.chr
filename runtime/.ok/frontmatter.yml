@@ -1,0 +1,2 @@
+title: Runtime 设计
+description: sayori 自己的 runtime 怎样落实理论：形态、记录、唤醒、回路与工作区怎样使用。设计或修改 sayori.run，或拿不准一条内容该放理论、设计、实现还是工作区时读

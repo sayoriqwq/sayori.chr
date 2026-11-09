@@ -1,12 +1,13 @@
 # sayori.chr
 
-本仓保存 user（sayori）关于"我和 agent 如何协作"的理论，以及让它收敛的少量规则。`theory/` 是理论真源，根部文件是收敛规则与 user 的输入。本仓只存 user 自己的主张，历史由 Git 追溯
+本仓保存 user（sayori）关于"我和 agent 如何协作"的理论，以及让它收敛的少量规则。`theory/` 是理论真源，`runtime/` 是 sayori 的 runtime 怎样落实理论的设计，根部文件是收敛规则与 user 的输入。本仓只存 user 自己的主张，历史由 Git 追溯
 
 本文件与 [ok/](ok/index.md) 是本仓用 OpenKnowledge 的收敛规则，不是进化里的 Runtime，维护本仓不记 Case。规则取自[文档](theory/documentation/index.md)理论，理论修改后有意地同步过来，规则不好用时和 user 直接改
 
 ## Reading
 
-- 从 [index.md](index.md) 定位内容，理论正文从 [Theory](theory/index.md) 进入
+- 从 [index.md](index.md) 定位内容，理论正文从 [Theory](theory/index.md) 进入，runtime 设计从 [Runtime](runtime/index.md) 进入
+- 拿不准一条内容属于理论还是 runtime 设计时，按 [Runtime 的 Position](runtime/index.md#position) 判断。设计页的写法、字段与阶段规则同理论页
 - 使用或修改概念时先查下方 [Glossary](#glossary)，定义真源在各词链接的理论页。沿已确认含义表达，出现歧义或冲突时以具体场景辨析，新含义经 user 确认后更新理论页、本表与相关引用。词条准入见 [Language](theory/language.md#admission)
 
 ## Glossary
@@ -84,9 +85,9 @@
 
 ## Validity
 
-理论文档的 frontmatter 带 `title`、`description`、`assertion`、`validity`。index 模块表的 Description 列与目录的 `.ok/frontmatter.yml` 从各页 frontmatter 生成，不手写。新文档从 `theory/.ok/templates/module.md` 开始，`validity: candidate`。`confirmed` 只在 user 确认后写入，只征求一次。之后的一般变更保持状态并明确告诉 user，重大变更或 user 不在场时的变更退回 `candidate`。含义见[效力](theory/primitive/validity.md)，字段与阶段规则见 [Frontmatter](ok/frontmatter.md)
+理论页与设计页的 frontmatter 带 `title`、`description`、`assertion`、`validity`。index 模块表的 Description 列与目录的 `.ok/frontmatter.yml` 从各页 frontmatter 生成，不手写。新文档从 `theory/.ok/templates/module.md` 开始，`validity: candidate`。`confirmed` 只在 user 确认后写入，只征求一次。之后的一般变更保持状态并明确告诉 user，重大变更或 user 不在场时的变更退回 `candidate`。含义见[效力](theory/primitive/validity.md)，字段与阶段规则见 [Frontmatter](ok/frontmatter.md)
 
-修改理论页后运行 `python3 -I .ok/scripts/derive.py --fix` 更新生成的内容，提交前运行 `derive.py` 与 `links.py` 核对。这两个脚本只补充 OpenKnowledge，职责见 [Convergence](ok/convergence.md)
+修改理论页或设计页后运行 `python3 -I .ok/scripts/derive.py --fix` 更新生成的内容，提交前运行 `derive.py` 与 `links.py` 核对。这两个脚本只补充 OpenKnowledge，职责见 [Convergence](ok/convergence.md)
 
 ## Versioning
 

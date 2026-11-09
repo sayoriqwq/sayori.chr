@@ -8,7 +8,7 @@ validity: confirmed
 
 ## Position
 
-[进化](../theory/evolution/index.md)里的 Runtime 从理论派生，供 agent 做业务工作时取得。维护本仓就是整理理论本身，所以这里的规则不算 Runtime，也不记 Case。规则不好用时，和 user 直接改
+[进化](../theory/evolution/index.md)里的 Runtime 从理论派生，供 agent 做业务工作时取得。维护本仓就是整理理论与 runtime 设计本身，所以这里的规则不算 Runtime，也不记 Case。规则不好用时，和 user 直接改
 
 ## Parts
 
@@ -28,9 +28,9 @@ OpenKnowledge 是知识图谱，本仓期望概念聚合、统一。所以这里
 
 | Script | Duty |
 | --- | --- |
-| `derive.py` | 核对理论页字段齐全，生成模块表与目录说明，见 [Frontmatter 的 Generated](frontmatter.md#generated)。`--fix` 写回 |
+| `derive.py` | 核对理论页与设计页字段齐全，生成模块表与目录说明，见 [Frontmatter 的 Generated](frontmatter.md#generated)。`--fix` 写回 |
 | `links.py` | 核对本仓 Markdown 的相对链接与锚点 |
 
-修改理论页后运行 `python3 -I .ok/scripts/derive.py --fix`，提交前运行 `derive.py` 与 `links.py` 核对
+修改理论页或设计页后运行 `python3 -I .ok/scripts/derive.py --fix`，提交前运行 `derive.py` 与 `links.py` 核对
 
 [OpenKnowledge](index.md)

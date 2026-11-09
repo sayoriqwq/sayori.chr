@@ -1,9 +1,9 @@
-"""补充 OpenKnowledge：从理论页与 ok/ 页的 frontmatter 生成 index 路由表与目录说明，并核对一致
+"""补充 OpenKnowledge：从理论页、设计页与 ok/ 页的 frontmatter 生成 index 路由表与目录说明，并核对一致
 
 职责只限维护本仓的知识库格式，不属于从理论派生的 Runtime。规则见
 ok/frontmatter.md#generated
 
-- 每篇理论页与 ok/ 页带 title、description、assertion、validity
+- 每篇理论页、设计页与 ok/ 页带 title、description、assertion、validity
 - index 模块表中 Description 列取自所链接页面的 description
 - 目录的 .ok/frontmatter.yml 取自该目录 index 的 title 与 description
 
@@ -27,7 +27,7 @@ def frontmatter(path):
 
 def pages():
     out = subprocess.check_output(
-        ["git", "ls-files", "-co", "--exclude-standard", "theory/*.md", "ok/*.md"], text=True)
+        ["git", "ls-files", "-co", "--exclude-standard", "theory/*.md", "runtime/*.md", "ok/*.md"], text=True)
     return [f for f in out.split() if "/.ok/" not in f]
 
 
@@ -66,7 +66,7 @@ for page in pages():
     if changed:
         open(page, "w").write("\n".join(lines))
 
-for yml in glob.glob("theory/**/.ok/frontmatter.yml", recursive=True):
+for yml in glob.glob("theory/**/.ok/frontmatter.yml", recursive=True) + glob.glob("runtime/**/.ok/frontmatter.yml", recursive=True):
     meta = frontmatter(yml.replace(".ok/frontmatter.yml", "index.md"))
     want = f"title: {meta['title']}\ndescription: {meta['description']}\n"
     if open(yml).read() != want:
