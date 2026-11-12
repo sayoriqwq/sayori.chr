@@ -40,6 +40,12 @@ Firstmate 的 Session 约每秒读一次 Store，读取由代码完成，模型�
 
 > 例：sais-workspace 记过一次。QA 定时任务每 5 分钟唤醒协调者，浏览器能力被禁用后，任务的停止条件仍只有交付或 user 停止。之后 3 小时它又唤醒 37 次，每次读一遍状态后空答，直到 user 要求关掉
 
+## Progress
+
+进度属于"记录"一级，变化频繁，不提示也不唤醒。user 在 Firstmate 的界面上直接看：常驻的面板每个节点一行，写最新 Report 的阶段、在等谁、距今多久，再标出已交回或待 user 决定。面板跟着 Firstmate 对 Store 的轮询刷新，不开模型回合，Firstmate 也不用复述进度
+
+> 例：sayori.dev 记过一次（Case `progress-invisible-to-user`）。一个 Mate 跑测试、修回归的一小时里，user 追问了四次进度，每次都由 Firstmate 临时读 pane 再转述
+
 ## Gaps
 
 现在覆盖不到的情形，出现 Case 再决定是否补机制：
