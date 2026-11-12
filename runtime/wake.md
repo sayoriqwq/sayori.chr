@@ -26,6 +26,7 @@ validity: candidate
 | target 为 firstmate 的 Pending | 唤醒 Firstmate | Firstmate 空闲时，一次观察最多开一个回合 |
 | Firstmate 转入后台的任务结束 | 唤醒发起它的 Firstmate Session | 送回结局与输出尾部 |
 | Mate 或 Worker 声明交回时缺最新的 Report | 唤醒该节点 | 只追问一次，仍缺就记缺报 |
+| Mate 或 Worker 声明交回且已有最新的 Report | 唤醒 Firstmate，经 target 为 firstmate 的 Pending | 每份 Report 只记一次，Firstmate 转告 user 后解决 |
 
 Firstmate 的 Session 约每秒读一次 Store，读取由代码完成，模型只在上表的条件满足时被叫醒。等外部系统时，起一个阻塞到结果出现的命令，例如等 CI 结束的命令，结果作为后台任务的结局回来
 
