@@ -1,7 +1,7 @@
 ---
 title: 回路
 description: 进化回路在 sayori 里怎样转：Case 记在哪里、谁整理、怎样决定与采用、怎样检验，派生物怎样保留出处。记 Case、提修订、发布新版本，或理论改了要找受影响的派生物时读
-assertion: Case 在使用处记下，由维护 runtime 的 Mate 成批整理成修订提议，user 决定，改在缺口所在的一层，工作区按版本采用，再按事先写下的问题检验。一圈只做一个小改动
+assertion: Case 在使用处记下，由维护 runtime 的 Mate 成批整理成修订提议，user 决定，改在缺口所在的一层，工作区按版本采用，再按事先写下的问题检验。一圈处理这一圈暴露的问题，每个改动各有检验问题
 validity: candidate
 ---
 # Loop
@@ -21,7 +21,7 @@ validity: candidate
 
 Firstmate 在回路里只记 Case 和升级版本，整理与修订由维护 runtime 的 Mate 负责。这个 Mate 的 Task 属于 sayori 自身的建设，放在 `~/workspace/` 下
 
-一圈处理一组 Case、做一个小改动、发一个版本。过程记录留在维护 Mate 的 Task 里，收口后由 Git 历史保留
+一圈处理这一圈暴露的 Case，缺口明确的一并修，发一个版本。改动数量不设上限，每个改动各写检验问题，效果仍能归到具体改动；证据不足、需要再观察的留到后续圈。过程记录留在维护 Mate 的 Task 里，收口后由 Git 历史保留（依据：2026-11-16 user「一圈修一圈的问题，而不是限定为一条」）
 
 ## Case
 
