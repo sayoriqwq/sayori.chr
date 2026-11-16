@@ -46,7 +46,7 @@ validity: candidate
 sayori.run 现在与本设计的差距，按[回路](loop.md)逐项处理：
 
 - **内容未独立**：角色说明写在 TS 代码里，测试断言说明的文本
-- **工作区约定写死**：`task/now/*/worktrees.json` 的位置与格式写在环境 adapter 里
+- **工作区约定写死**：`task/*/worktrees.json`（兼容 `task/now/*/`）的位置与格式写在环境 adapter 里
 - **Case 字段不足**：Case 事件只有 `caseId`、`message`、`basis`
 - **未发布为 Pi package**：工作区按源码路径直接加载扩展
 - **过程记录未迁出**：`sayori.run/docs` 保存着建造过程的 Spec、Ticket、交付记录与 Decision Log。设计决定迁到本目录，建造过程的 Task 记录放到 `~/workspace/` 下，见 sayori.run 的 [Decision Log](../../sayori.run/docs/decisions.md) 0064、0065
