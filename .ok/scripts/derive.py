@@ -27,7 +27,7 @@ def frontmatter(path):
 
 def pages():
     out = subprocess.check_output(
-        ["git", "ls-files", "-co", "--exclude-standard", "theory/*.md", "runtime/*.md", "ok/*.md"], text=True)
+        ["git", "ls-files", "-co", "--exclude-standard", "theory/*.md", "runtime/*.md", "dev/*.md", "ok/*.md"], text=True)
     return [f for f in out.split() if "/.ok/" not in f]
 
 
@@ -66,7 +66,7 @@ for page in pages():
     if changed:
         open(page, "w").write("\n".join(lines))
 
-for yml in glob.glob("theory/**/.ok/frontmatter.yml", recursive=True) + glob.glob("runtime/**/.ok/frontmatter.yml", recursive=True):
+for yml in glob.glob("theory/**/.ok/frontmatter.yml", recursive=True) + glob.glob("runtime/**/.ok/frontmatter.yml", recursive=True) + glob.glob("dev/**/.ok/frontmatter.yml", recursive=True):
     meta = frontmatter(yml.replace(".ok/frontmatter.yml", "index.md"))
     want = f"title: {meta['title']}\ndescription: {meta['description']}\n"
     if open(yml).read() != want:
