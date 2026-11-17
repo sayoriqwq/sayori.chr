@@ -38,7 +38,7 @@ validity: candidate
 | Skill 的载体 | [Skill](../theory/skill/index.md) | [消费](consumer.md#package) |
 | Issue 的模板与位置 | [Issue](../theory/delivery/issue.md#selection) | 未定 |
 | Ticket 的位置 | [Ticket](../theory/delivery/ticket.md#composition) | 未定 |
-| Coverage 的标记 | [Coverage](../theory/delivery/coverage.md#expression) | sayori.run 的收口清单（🟢 Agreed、🟡 Implied、🔴 Outside），尚未回写本目录 |
+| Coverage 的标记 | [Coverage](../theory/delivery/coverage.md#expression) | [记录格式](records.md#formats)，种类、完成状态与 Effect 生命周期分开 |
 | 提问的格式 | [Leadership](../theory/communication/leadership.md#questions) | 未定 |
 
 ## Gaps
