@@ -35,9 +35,31 @@ validity: candidate
 | Mate | 可以亲自执行并因此阻塞，可以派 Worker。交回方式同 Worker |
 | Worker | 交回时先写 Report 再声明结束，缺最新的 Report 时追问一次 |
 
-- **身份**：启动参数固定 role、scope、workId 与上层 scope，一个 Session 对应一份工作。scope 写成 `task/<task>/<node>`，状态按它归到 Task
+- **身份**：启动参数固定 role、scope、workId 与上层 scope，一个 Session 对应一份工作。scope 写成 `task/<task>/<node>`，状态按它归到 Task。Firstmate 的持久绑定与运行实例按下方 Identity 核对
 - **派活**：上层用 `sy delegate` 一次完成：写 Task 与负责人，在所属 Task 的 herdr 工作区新开不抢焦点的 tab 启动下层，记一条 Effect，派发后立即返回。派发成功只说明任务已送达，结果经 Report 与 Pending 回来
 - **交替**：Session 正常结束或被替换时，从未写过 Report 的身份记一次缺报。硬杀不经过关闭钩子，不在保证范围内
+
+## Identity
+
+Firstmate 从当前已保存的 Session 显式登录，在工作区 Store 的 Effect 中绑定 scope、workId、harness 与准确 Session 引用，并记录当前进程和 Herdr terminal。一个工作区只绑定一个 Firstmate，不靠换 scope 绕过唯一性检查。登录不启动节点，也不授予权限
+
+- **首次登记**：由 user 在当前 Firstmate 发起，核对真实 Session 与命名 terminal。保留可回查的启动配置，并区分原始参数和等价重建参数，不从历史命令猜模型或捕获整份含秘密的环境
+- **后续启动**：注册后先核对同一 Session 与工作身份，再取得当前实例的占用。原实例仍在或观察 Unknown 时拒绝第二个实例，两个同时登记不能都成功
+- **正常关闭**：先排空本实例工作，再释放实例占用，Session 绑定继续保留。旧实例不能释放新实例的占用
+- **硬中断**：不把无 Report、旧 pane 消失或进程号过期当成完整恢复证明。确认原进程已消失，并排除同名其他 terminal 后才续上同一 Session，PID 被复用或观察失败时拒绝自动接续
+- **换代**：换 Session 或工作身份必须显式协调，不在登录或恢复时隐式替换。第一步不提供强制抢占
+
+未登记的旧 Firstmate 保持显式启动方式，不能声称已受身份机制保护。登记后，加载新适配的实例在启动和业务工具入场处核验占用。此机制约束受管入口，不是认证系统，也不能阻止绕过适配的旧进程或任意原始 Store 写入
+
+## Recovery
+
+恢复分两步：先使原 Session 可交互，再按最新 Report 与 Pending 接续工作。恢复成功不生成新的派活任务，也不意味着原工作继续执行或已完成
+
+第一步由 user 重启后手动调用一次恢复入口，不增加 daemon。入口按职责树先恢复 Firstmate，再恢复未接收工作的 Mate，Worker 只按明确选择恢复。已匹配的活实例不重复启动，未知身份、缺原会话或中断中的恢复步骤先对账，不盲重试
+
+恢复复用进入节点的身份核验与续会话操作，但不批量执行进入动作。它不借用 user tab、不 move/zoom，外部动作前后记录同一资源的 checkpoint。缺少所属工作区或现场身份冲突时报告阻塞，不猜目的地
+
+恢复后只读最新协作状态，无待办时保持空闲，有未解决的目标 Pending 才沿既有唤醒规则处理。开机自动触发、Herdr 全局原生续会话开关和真实重启试验另定范围，不由身份登记自动启用
 
 ## Control
 
