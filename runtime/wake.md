@@ -42,7 +42,7 @@ Firstmate 的 Session 约每秒读一次 Store，读取由代码完成，模型�
 
 ## Progress
 
-进度属于"记录"一级，变化频繁，不提示也不唤醒。user 在 Firstmate 的界面上直接看：常驻的面板按工作区分区，每个节点一行，写最新 Report 的阶段、在等谁、距今多久，再标出已交回或待 user 决定。面板跟着 Firstmate 对 Store 的轮询刷新，不开模型回合，Firstmate 也不用复述进度。从面板可以选中节点直接进入
+进度属于"记录"一级，变化频繁，不提示也不唤醒。user 在 Firstmate 的界面上直接看：常驻的面板列出本工作区职责树的节点，登记了只读外区时附带外区摘要，只供回看，不唤醒。每个节点一行，写最新 Report 的阶段、在等谁、距今多久，再标出已交回或待 user 决定。面板跟着 Firstmate 对 Store 的轮询刷新，不开模型回合，Firstmate 也不用复述进度。从面板可以选中节点直接进入
 
 user 离开一段时间回来时，面板只给快照，理解现状由 Mate 的定位报告承担，见[形态的 Control](architecture.md#control)
 

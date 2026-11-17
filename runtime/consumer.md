@@ -13,11 +13,15 @@ validity: candidate
 | Item | Place | Content |
 | --- | --- | --- |
 | 版本 | `sayori-versions.json` | 固定 sayori.run 与 sayori.dev 的 commit，`sy check` 报告与实际 checkout 的差异。升级经 user 批准 |
-| 登记 | `sayori-workspaces.json` | Firstmate 管理的工作区与各自的写权限，只放在 Firstmate 所在的工作区 |
+| 登记 | `sayori-workspaces.json` | 本工作区的 Firstmate 能读写的工作区与各自的权限。登记外区只为只读回看，不是管理关系 |
 | 配置 | `.sayori/` | Store 与本工作区的 Session 目录 |
 | 路由 | `AGENTS.md` | 本工作区的仓库、环境、知识入口与特有规则 |
 | 特有 Skill | `.agents/skills/` | 只服务本工作区的 Skill，名称与协作层、工程层的 Skill 互不相同 |
 | Task | 工作区自己的组织方式 | Task 的当前记录与 worktree 登记 |
+
+一个工作区是一个领域，有自己的职责树：自己的 Firstmate、Store 与 Task。user 的不同领域互不相交，例如个人与公司，各用一个工作区，彼此不共享节点、仓库与内容。工作区之间共享的只有协作层与工程层，各自固定版本。采用方暴露的问题经[回路](loop.md)抽象成通用 Case 回到 sayori 的建设，不带采用方的内容
+
+> 例：`~/workspace` 建设 sayori，`~/sais-workspace` 做公司项目。后者有自己的 Firstmate，前者的登记里 sais 只读，只用于回看 Case
 
 工作区原有的协作 Skill 在接入前移除，协作协议只保留协作层提供的一份。接入前先核对同名 Skill 与部署副本，未验证不卸旧入口
 
