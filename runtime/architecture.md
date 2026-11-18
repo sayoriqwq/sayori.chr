@@ -9,9 +9,9 @@ validity: candidate
 ## Host
 
 - **协议与 harness 无关**：Report、Pending、Effect、派活、交回与收口都经 `sy` 读写同一个 Store，任何能执行命令的 harness 都能参与。每个 harness 一份适配，适配只负责让协议进入这个 harness
-- **容器**：herdr。每个节点占一个 pane，user 可以直接进入对话
+- **容器**：herdr。每个节点占一个 pane，user 可以直接进入对话。Herdr 自带的 workspace、session 与本仓的工作区、Session 同名不同义，指 Herdr 的一律带前缀写 Herdr workspace、Herdr session，不另造词
 - **常驻**：只有 herdr server 与 Firstmate 的进程，没有 daemon
-- **工作区**：节点在工作区目录启动，工作区的 `AGENTS.md` 作为上下文载入，Store 写在该工作区的 `.sayori/`
+- **工作区**：不带前缀的工作区只指 sayori 的工作区。节点在工作区目录启动，工作区的 `AGENTS.md` 作为上下文载入，Store 写在该工作区的 `.sayori/`
 
 ## Adapters
 
@@ -36,7 +36,7 @@ validity: candidate
 | Sailor | 交回时先写 Report 再声明结束，缺最新的 Report 时追问一次 |
 
 - **身份**：启动参数固定 role、scope、workId 与上层 scope，一个 Session 对应一份工作。scope 写成 `task/<task>/<node>`，状态按它归到 Task。Firstmate 的持久绑定与运行实例按下方 Identity 核对
-- **派活**：上层用 `sy delegate` 一次完成：写 Task 与负责人，在所属 Task 的 herdr 工作区新开不抢焦点的 tab 启动下层，记一条 Effect，派发后立即返回。派发成功只说明任务已送达，结果经 Report 与 Pending 回来
+- **派活**：上层用 `sy delegate` 一次完成：写 Task 与负责人，在所属 Task 的 Herdr workspace 新开不抢焦点的 tab 启动下层，记一条 Effect，派发后立即返回。派发成功只说明任务已送达，结果经 Report 与 Pending 回来
 - **交替**：Session 正常结束或被替换时，从未写过 Report 的身份记一次缺报。硬杀不经过关闭钩子，不在保证范围内
 
 ## Identity
@@ -75,7 +75,7 @@ user 的控制面就是在终端里和 Mate 或 Firstmate 对话，不另建图�
 - **定位**：user 回来时，Mate 按需生成一页现状报告，只讲现状。决定另起，按上下文分组
 - **进入 Station**：user 可以直接进入任意 Station（Crew 的 Tree）。`sy enter` 把它的 pane 移到 user 面前铺满，退出时送回原处，进程不中断。已结束的 Station 在新 pane 里接回原 Session。查看与进出的入口见 [Station 的 View](station.md#view)
 - **分出**：偏题由 user 用 `/branch` 分出新 Station，见 [Station 的 Branch](station.md#branch)
-- **布局**：每个 Task 一个 herdr 工作区，Mate 在前，Sailor 在后，派出时不抢焦点
+- **布局**：每个 Task 一个 Herdr workspace，Firstmate 独占一个，Mate 在前，Sailor 在后，派出时不抢焦点
 
 ## Mechanism
 
