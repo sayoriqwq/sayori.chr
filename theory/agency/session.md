@@ -18,6 +18,10 @@ Mate 负责一个 Task，可能持续几周。承载它的 Session 却很短暂�
 
 身份属于 [Crew](crew.md) 里的角色，Session 只是承载它。一个 Mate 和它的 Task 前后可以由许多 Session 承载。Worker 通常只活在一个 Session 里，随所负责的 Ticket 结束
 
+同一时刻，一个角色只由一个 Session 承载。同一个 Task 里要另开一个 Session 谈其中一部分，就在职责树上设一个下层节点，由它负责这部分，结果经记录回到 Task
+
+> 例：和 tui-mate 讨论交互时岔到快捷键冲突，分出去的 Session 不是 tui-mate 的第二个分身，而是它下面负责快捷键的节点
+
 ## Outside
 
 凡是要活过 Session 的，产生时就写到 Session 之外，见 [Record](../primitive/record.md)。在本领域，它们的权威位置是：
