@@ -43,12 +43,12 @@ Task 的当前视图组织声明、环境观察与材料入口，不把声明当
 - **批准**：`approval` 事件。条件与时效供人阅读，执行前由负责人对照。`source` 说明出处，批准以 `userBasis` 写明的 user 原话或决定为依据
 - **Decision**：`decision` 事件带轻重与理由，取代时写 `supersedes`。`sy decisions` 导出 Markdown 形式的 Decision Log。工具返回 seq 与 source，agent 据此告诉 user 记了哪几条
 - **Coverage**：🟢 Agreed、🟡 Implied、🔴 Outside 表示与预期的关系，同时显示种类文字。完成状态独立表达，不与 Effect 生命周期或环境观察合并成成功灯
-- **Focus**：宿主保留当前会话的焦点与历史锚点，实质变化由当前 agent 随正常对话记录，不逐轮打卡。[Todo](../theory/delivery/task.md#identity) 仍只记录当前 Session 的行动，跨 Session 的责任回到 Task
+- **Focus**：每个 Station 一行焦点，属于 Station，换 Session 时接回。实质变化由当前 agent 随正常对话记录，不逐轮打卡，见 [Station](station.md#register)。[Todo](../theory/delivery/task.md#identity) 仍只记录当前 Session 的行动，跨 Session 的责任回到 Task
 
-分支保留必要背景与约束，返回带结论、依据与未完项。会话历史不复制身份、资源所有权或产生批准，独立工作沿 [Handoff](../theory/agency/handoff.md) 承接，有效批准按 [Transfer](../theory/agency/approval.md#transfer) 随工作核对。恢复行动以当前记录与环境为准，不重放历史动作
+偏题由 user 用 `/branch` 分出新 Station，两个 Session 互不带回结论，结果经记录回到 Task，见 [Station 的 Branch](station.md#branch)。会话历史不复制身份、资源所有权或产生批准，有效批准按 [Transfer](../theory/agency/approval.md#transfer) 随工作核对。恢复行动以当前记录与环境为准，不重放历史动作
 
 ## Basis
 
-候选设计依据：2026-11-17 user 在工作区 Task `pi-collaboration` 对齐的一次记录、同一 Report 分层阅读、Focus 与 Todo 分工、安全分支及独立 Task 承接。具体宿主能力、字段与测试方案留在该 Task 的 Spec，不作为通用理论或已实现能力
+候选设计依据：2026-11-17 user 在工作区 Task `pi-collaboration` 对齐的一次记录、同一 Report 分层阅读、Focus 与 Todo 分工、安全分支及独立 Task 承接；2026-11-18 user 与 TUI Mate 对齐的 Station 与 `/branch`。具体宿主能力、字段与测试方案留在该 Task 的 Spec，不作为通用理论或已实现能力
 
 [Runtime](index.md)
