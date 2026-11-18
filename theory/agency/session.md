@@ -16,11 +16,11 @@ Mate 负责一个 Task，可能持续几周。承载它的 Session 却很短暂�
 
 ## Identity
 
-身份属于 [Crew](crew.md) 里的角色，Session 只是承载它。一个 Mate 和它的 Task 前后可以由许多 Session 承载。Worker 通常只活在一个 Session 里，随所负责的 Ticket 结束
+身份属于 [Crew](crew.md) 里的 [Station](crew.md#station)，Session 只是承载它。一个 Station 前后可以由许多 Session 承载。Sailor 通常只活在一个 Session 里，随所负责的 Ticket 结束
 
-同一时刻，一个角色只由一个 Session 承载。同一个 Task 里要另开一个 Session 谈其中一部分，就在职责树上设一个下层节点，由它负责这部分，结果经记录回到 Task
+同一时刻，一个 Station 只由一个 Session 承载。同一个 Task 里要另开一个 Session 谈其中一部分，就在职责树上设一个下层 Mate，占一个新的 Station，由它负责这部分，结果经记录回到 Task
 
-> 例：和 tui-mate 讨论交互时岔到快捷键冲突，分出去的 Session 不是 tui-mate 的第二个分身，而是它下面负责快捷键的节点
+> 例：和 tui-mate 讨论交互时岔到快捷键冲突，分出去的 Session 不是 tui-mate 的第二个分身，而是它下面负责快捷键的 Mate
 
 ## Outside
 

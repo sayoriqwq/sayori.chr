@@ -15,7 +15,7 @@ validity: candidate
 | 记录 | 任何节点，或 user 说一句"记 Case" | 发生处工作区的 Store | 一次工具调用。机制提供候选：缺报、长时间未解的 Pending、Unknown 的 Effect |
 | 整理 | 维护 runtime 的 Mate | 它负责的 Task | 攒够一批或到周期时整理，按 [Revision](#revision) 定位缺口，每组写成一份修订提议，动手前写下[检验的问题](../theory/evolution/evaluation.md#question) |
 | 决定 | user | Decision Log | 一份提议一个决定：证据、改哪一层、怎么改、怎样算有效 |
-| 修订 | 维护 runtime 的 Mate，或它委派的 Worker | 缺口所在的一层 | 理论按本仓规则修改，设计页从 candidate 起，实现发布新版本 |
+| 修订 | 维护 runtime 的 Mate，或它委派的 Sailor | 缺口所在的一层 | 理论按本仓规则修改，设计页从 candidate 起，实现发布新版本 |
 | 采用 | 工作区的 Firstmate | 工作区固定的版本号 | 升级经 user 批准，版本说明引用对应的 Case |
 | 检验 | 维护 runtime 的 Mate | Case 的后续事件 | 对照原场景、相邻场景与正常行为，复发就记新 Case 并关联原条 |
 
