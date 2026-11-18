@@ -82,7 +82,7 @@ flowchart LR
 Effect 在产生时就已登记，所以 Session 无论正常结束还是中断，它负责的 Effect 都能由他人接手
 
 - **换 Session**：随[交接](handoff.md#acceptance)转给接续的 Session
-- **Worker 交回 Ticket**：未结束的 Effect 逐项列出，经 [Return](handoff.md#return) 交给上层
+- **Sailor 交回 Ticket**：未结束的 Effect 逐项列出，经 [Return](handoff.md#return) 交给上层
 - **负责人中断**：由职责树的上层接手，只有打算、没有结果的条目对照环境核对
 - **user 查看**：各层负责的 Effect 经 [Task](../delivery/task.md#information) 汇集到[状态入口](crew.md#visibility)
 

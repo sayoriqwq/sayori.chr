@@ -35,7 +35,8 @@
 | [Argue](theory/communication/argue.md) | agent 作可信反方，辨清真实诉求 |
 | [Probe](theory/communication/probe.md) | 关键维度足够真实的最简实践，取得依据 |
 | [Decision](theory/communication/decision.md) | 有理由地选定去向，一形成就追加到 Decision Log |
-| [Crew](theory/agency/crew.md) | Captain（user）、Firstmate、Mate、Worker 组成的职责树 |
+| [Crew](theory/agency/crew.md) | Captain（user）、Firstmate、Mate、Sailor，谁对谁负责构成职责树。Mate 可递归负责一个范围，Sailor 执行一张 Ticket |
+| [Station](theory/agency/crew.md#station) | 职责树上一份责任的位置与对话入口，同一时刻由一个 Session 承载 |
 | [Session](theory/agency/session.md) | 职责持久，Session 短暂：要活过它的都放在外面 |
 | [Mode](theory/agency/mode.md) | 判断何时取得：HITL 当场问，AFK 离场前问好，默认 HITL |
 | [Approval](theory/agency/approval.md) | 具体动作是否在 user 的批准范围内 |
@@ -44,7 +45,7 @@
 | [Issue](theory/delivery/issue.md) | 现状与预期的差距，写给 user 与同事看 |
 | [Task](theory/delivery/task.md) | user 注意力的一个域，Mate 负责，含 Pending |
 | [Spec](theory/delivery/spec.md) | 交给 agent 执行的说明：已定的决定整理成一份，只综合不编造 |
-| [Ticket](theory/delivery/ticket.md) | 从 Spec 切下的垂直切片，恰好交给一个 Worker，写明阻塞 |
+| [Ticket](theory/delivery/ticket.md) | 从 Spec 切下的垂直切片，恰好交给一个 Sailor，写明阻塞 |
 | [Coverage](theory/delivery/coverage.md) | 事项与 user 预期的关系：Agreed、Implied、Outside，约束范围并决定汇报什么 |
 | [Acceptance](theory/delivery/acceptance.md) | 用环境证据对照 Spec 或 Task 的记录核对做完，不看报告 |
 | [Closeout](theory/delivery/closeout.md) | 工作结束时收口：复盘、结局、逐项回执 |

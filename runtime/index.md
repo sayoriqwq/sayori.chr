@@ -56,6 +56,7 @@ sayori.run 现在与本设计的差距，按[回路](loop.md)逐项处理：
 
 | Module | Description |
 | --- | --- |
+| [Station](station.md) | sayori 的协作层怎样落实 Station：登记与承载、Sailor 的专业、/branch 分出新 Station、Crew 视图与常驻焦点。要改派活与分支、设计 Crew 视图，或拿不准一个新 Session 该归哪个 Station 时读 |
 | [Architecture](architecture.md) | sayori 的协作层跑在什么上，Crew 怎样落成进程，各 harness 怎样适配，哪些规则做成机制。要改宿主、角色的启动与派活、接入新的 harness，或决定一条规则做成机制还是内容时读 |
 | [Records](records.md) | runtime 把什么记在哪里：事件 Store、Task 的当前记录与环境各自的职责，事件种类对应的理论概念，以及理论交给 runtime 的记录格式。要新增事件种类、改 Store，或拿不准一项事实该写在哪里时读 |
 | [Wake](wake.md) | 一项变化怎样让该知道的一方取得：记录、提示与唤醒怎样分工，谁在什么条件下被叫醒。设计通知、新增唤醒来源，或协调回合过多时读 |

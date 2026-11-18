@@ -35,7 +35,7 @@ validity: confirmed
 离场期间有两点和 HITL 不同：
 
 - **问题**：原本当场问的问题记入 [Pending](../delivery/task.md#information)。哪部分停下、哪部分继续，按 [Approval 的 Check](approval.md#check) 核对
-- **Implied**：没问到的 Implied 工作内容，Worker 报给上层 Mate，由 Mate 选择做不做，做多了的收回，交付时说明
+- **Implied**：没问到的 Implied 工作内容，Sailor 报给上层 Mate，由 Mate 选择做不做，做多了的收回，交付时说明
 
 ## Transition
 

@@ -32,8 +32,8 @@ validity: candidate
 | Rank | Mechanism |
 | --- | --- |
 | Firstmate | `bash` 超过 5 秒转入后台，结束时开回合送回结局。只做小而快的事，其余派活 |
-| Mate | 可以亲自执行并因此阻塞，可以派 Worker。交回方式同 Worker |
-| Worker | 交回时先写 Report 再声明结束，缺最新的 Report 时追问一次 |
+| Mate | 可以亲自执行并因此阻塞，可以派 Sailor。交回方式同 Sailor |
+| Sailor | 交回时先写 Report 再声明结束，缺最新的 Report 时追问一次 |
 
 - **身份**：启动参数固定 role、scope、workId 与上层 scope，一个 Session 对应一份工作。scope 写成 `task/<task>/<node>`，状态按它归到 Task。Firstmate 的持久绑定与运行实例按下方 Identity 核对
 - **派活**：上层用 `sy delegate` 一次完成：写 Task 与负责人，在所属 Task 的 herdr 工作区新开不抢焦点的 tab 启动下层，记一条 Effect，派发后立即返回。派发成功只说明任务已送达，结果经 Report 与 Pending 回来
@@ -57,7 +57,7 @@ Firstmate 从当前已保存的 Session 显式登录，在工作区 Store 的 Ef
 
 恢复分两步：先使原 Session 可交互，再按最新 Report 与 Pending 接续工作。恢复成功不生成新的派活任务，也不意味着原工作继续执行或已完成
 
-第一步由 user 重启后手动调用一次恢复入口，不增加 daemon。入口按职责树先恢复 Firstmate，再恢复未接收工作的 Mate，Worker 只按明确选择恢复。已匹配的活实例不重复启动，未知身份、缺原会话或中断中的恢复步骤先对账，不盲重试
+第一步由 user 重启后手动调用一次恢复入口，不增加 daemon。入口按职责树先恢复 Firstmate，再恢复未接收工作的 Mate，Sailor 只按明确选择恢复。已匹配的活实例不重复启动，未知身份、缺原会话或中断中的恢复步骤先对账，不盲重试
 
 恢复复用进入节点的身份核验与续会话操作，但不批量执行进入动作。它不借用 user tab、不 move/zoom，外部动作前后记录同一资源的 checkpoint。缺少所属工作区或现场身份冲突时报告阻塞，不猜目的地
 
@@ -73,8 +73,9 @@ user 的控制面就是在终端里和 Mate 或 Firstmate 对话，不另建图�
 
 - **确定性操作**：派活、回答 Pending、接收与退回都以 `sy` 命令提供，由 agent 调用，不需要额外的模型判断
 - **定位**：user 回来时，Mate 按需生成一页现状报告，只讲现状。决定另起，按上下文分组
-- **进入节点**：user 可以直接进入任意节点（Crew 的 Tree）。`sy enter` 把节点的 pane 移到 user 面前铺满，退出时送回原处，进程不中断。已结束的节点在新 pane 里接回原 Session
-- **布局**：每个 Task 一个 herdr 工作区，Mate 在前，Worker 在后，派出时不抢焦点
+- **进入 Station**：user 可以直接进入任意 Station（Crew 的 Tree）。`sy enter` 把它的 pane 移到 user 面前铺满，退出时送回原处，进程不中断。已结束的 Station 在新 pane 里接回原 Session。查看与进出的入口见 [Station 的 View](station.md#view)
+- **分出**：偏题由 user 用 `/branch` 分出新 Station，见 [Station 的 Branch](station.md#branch)
+- **布局**：每个 Task 一个 herdr 工作区，Mate 在前，Sailor 在后，派出时不抢焦点
 
 ## Mechanism
 

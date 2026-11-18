@@ -16,8 +16,8 @@ validity: confirmed
 
 | Direction | Example |
 | --- | --- |
-| Delegate | Mate 把一个 Ticket 交给 Worker |
-| Return | Worker 把结果交回 Mate |
+| Delegate | Mate 把一个 Ticket 交给 Sailor |
+| Return | Sailor 把结果交回 Mate |
 | Resume | Mate 换一个 [Session](session.md#end) 接续自己的职责 |
 
 Resume 和中断后的接手，交出方往往已经不在。交接照样成立，只是没有人可以追问，接收者完全依靠记录
@@ -40,7 +40,7 @@ Delegate 时，另外交代三件只属于这次交接的事：
 - **对象**：交回给谁
 - **结束**：做到什么算完成
 
-> 例：Mate 委派 Worker 修一个登录 bug。交给 Worker 的是 Ticket 入口，另外交代：交回修复的 PR 和复现前后的对比，交回给本 Mate，复现用例通过即算完成
+> 例：Mate 委派 Sailor 修一个登录 bug。交给 Sailor 的是 Ticket 入口，另外交代：交回修复的 PR 和复现前后的对比，交回给本 Mate，复现用例通过即算完成
 
 ## Return
 

@@ -1,7 +1,7 @@
 ---
 title: Ticket
-description: 把 Spec 切成垂直切片交给 Worker：怎样切、阻塞关系怎样写、什么时候要 user 确认。拆分工作、给 Worker 写任务，或接收一个 Ticket 时读
-assertion: Ticket 是从 Spec 切下的一条垂直切片，贯穿每一层、可以单独验证，恰好交给一个 Worker。Ticket 全部关闭，不等于 Spec 已经满足
+description: 把 Spec 切成垂直切片交给 Sailor：怎样切、阻塞关系怎样写、什么时候要 user 确认。拆分工作、给 Sailor 写任务，或接收一个 Ticket 时读
+assertion: Ticket 是从 Spec 切下的一条垂直切片，贯穿每一层、可以单独验证，恰好交给一个 Sailor。Ticket 全部关闭，不等于 Spec 已经满足
 validity: confirmed
 ---
 # Ticket
@@ -12,7 +12,7 @@ Ticket 是从 [Spec](spec.md) 切下的一条垂直切片：
 
 - 窄，但贯穿每一层，例如数据结构、接口、界面与测试
 - 完成后可以单独演示或验证
-- 大小放得进一个新的上下文，所以恰好交给一个 [Worker](../agency/crew.md)，按 [Ownership](../primitive/ownership.md) 负责
+- 大小放得进一个新的上下文，所以恰好交给一个 [Sailor](../agency/crew.md)，按 [Ownership](../primitive/ownership.md) 负责
 
 有让后续改动变容易的前置重构，先做
 
