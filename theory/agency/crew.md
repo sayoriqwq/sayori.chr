@@ -77,6 +77,8 @@ Station 上发生了变化，按它影响到谁决定通知谁：
 
 ## Reentry
 
-user 回来时，Firstmate 帮 user 整体定位：正在做哪些事、到了哪里、哪些在等 user。需要深入某个 Task 时，由它的 Mate 接着展开。恢复的方式见[理解负担](../communication/load.md#reorient)
+user 回来时，Firstmate 按 user 原来想解决的问题说明：事情现在怎样，是否有事需要 user 判断或行动。同一诉求经过几次交接，回来仍是一件事。同一 Task 中需要分别判断的结果，分开说明
+
+user 想核对时，再由负责的 Mate 展开进度与依据。user 只要认得自己的诉求，不必记得 Task 名或由哪个 Session 接手。恢复的方式见[理解负担](../communication/load.md#reorient)
 
 [Agency](index.md)
