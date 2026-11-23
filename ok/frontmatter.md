@@ -27,12 +27,13 @@ validity: confirmed
 
 ## Generated
 
-[组织的 Directory](../theory/documentation/organization.md#directory) 要求路由生成、不手写。本仓用 OpenKnowledge 的目录机制落实：
+[组织的 Directory](../theory/documentation/organization.md#directory)要求路由生成而非手写。本仓用 OpenKnowledge 的目录机制与断言总览落实这一原则：
 
-- **模块表**：index 中 `Module | Description` 表的 Description 列，取自所链接页面的 `description`
-- **目录说明**：目录的 `.ok/frontmatter.yml`，取自该目录 index 的 `title` 与 `description`
+- **模块表**：各目录 index 中包含 Description 列的表格，其 Description 值取自所链接页面的 `description`
+- **目录说明**：各目录的 `.ok/frontmatter.yml`，取自该目录 index 的 `title` 与 `description`
+- **断言总览**：[断言总览](assertions.md)汇总全仓受管页面的标题、阶段与 `assertion`，支持先全局召回再选择性展开全文
 
-由 `.ok/scripts/derive.py` 生成并核对，见 [Convergence](convergence.md#scripts)
+上述派生内容均由 `.ok/scripts/derive.mjs` 自动生成并核对，见 [Convergence](convergence.md#scripts)
 
 ## Stage
 

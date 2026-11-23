@@ -21,5 +21,6 @@ validity: confirmed
 | --- | --- |
 | [Frontmatter](frontmatter.md) | 文档入口在 OpenKnowledge 中落到哪些字段，路由与目录说明怎样生成，页面阶段怎样改。新建页面、写 frontmatter、把一页改为 confirmed，或修改已确认的页面时读 |
 | [Convergence](convergence.md) | 本仓靠什么把内容收敛到同一种形式：AGENTS.md 与维护脚本，它们和进化里的 Runtime 是什么关系。修改 AGENTS.md、运行或修改维护脚本，或拿不准用词要不要统一时读 |
+| [Assertions](assertions.md) | 全仓所有理论页、设计页、精选案例与收敛规则的核心断言总览，由脚本自动生成。进入本仓、跨领域召回或动笔前先读此页，再按需打开具体文件 |
 
 [Repository](../index.md)

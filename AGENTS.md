@@ -6,9 +6,10 @@
 
 ## Reading
 
-- 从 [index.md](index.md) 定位内容，理论正文从 [Theory](theory/index.md) 进入，runtime 设计从 [Runtime](runtime/index.md) 进入
-- 拿不准一条内容属于理论还是 runtime 设计时，按 [Runtime 的 Position](runtime/index.md#position) 判断。设计页的写法、字段与阶段规则同理论页
-- 使用或修改概念时先查下方 [Glossary](#glossary)，定义真源在各词链接的理论页。沿已确认含义表达，出现歧义或冲突时以具体场景辨析，新含义经 user 确认后更新理论页、本表与相关引用。词条准入见 [Language](theory/language.md#admission)
+- **先召回，再选读**：进入本仓或作任何跨领域判断与修订前，先读[断言总览](ok/assertions.md)完成全仓断言召回，识别全部相关或可能受影响的领域主张，再按各页 `description` 选择性打开完整正文
+- **按层定位**：从 [index.md](index.md) 辨明仓库布局，理论正文从 [Theory](theory/index.md) 进入，协作层设计从 [Runtime](runtime/index.md) 进入，工程层设计从 [Dev](dev/index.md) 进入，真实反例从 [Cases](cases/index.md) 查阅
+- **归层判定**：拿不准一条内容属于理论还是协作层设计时，按 [Runtime 的 Position](runtime/index.md#position) 与[消费的 Border](runtime/consumer.md#border) 判断。设计页的写法、字段与阶段规则同理论页
+- **术语核对**：使用或修改概念时先查下方 [Glossary](#glossary)，定义真源在各词链接的理论页。沿已确认含义表达，出现歧义或冲突时以具体场景辨析，新含义经 user 确认后更新理论页、本表与相关引用。词条准入见 [Language](theory/language.md#admission)
 
 ## Glossary
 
@@ -58,8 +59,17 @@
 | [Leading Word](theory/documentation/writing.md#language) | 模型已理解的紧凑词语，锚定同一概念或行为 |
 | [Skill](theory/skill/index.md) | 行为治理单元：在可识别的情境中约束 agent 的做事过程，成立条件是可复发的跑偏 |
 | [Derivation](theory/evolution/derivation.md) | 将 Theory 转成自包含的 Runtime |
-| [Case](theory/evolution/case.md) | 一次偏差的可检查记录，只追加 |
+| [Case](theory/evolution/case.md) | 一次偏差的可检查记录，只追加，经吸收的典型案例沉淀于 [cases/](cases/index.md) |
 | [Evaluation](theory/evolution/evaluation.md) | 用证据看一项修改是否带来值得保留的改善 |
+
+### Language Whitelist
+
+正文优先使用中文，仅保留有明确语义价值的理论词与无贴切中文的基础概念词：
+
+- **理论词**：见上方 [Glossary](#glossary) 及各理论页已确认的控制词
+- **基础概念词**：`user`、`agent`、`token`、`runtime`、`harness`
+
+专有产品与工具名按原名引用，日常说法与界面术语一律使用中文
 
 ## Special Files
 
@@ -72,7 +82,7 @@
 
 规则真源见[书写](theory/documentation/writing.md)与[读者](theory/documentation/audience/index.md)。本仓理论由 user 与 agent 共读。评判标准是美观与可读性
 
-- **陈述**：正面陈述本模块的对象、关系与依据，按 user 的重点组织。与相邻模块的分界只在入口写一次
+- **陈述**：用描述性语言正面定义本模块是什么、做什么、为什么，执行流程用命令式编号步骤。相邻概念按边界与第一性维度区分职责，不在定义里写不是什么。真实反例统一由 [cases/](cases/index.md) 承载并在正文示例块链接引用。规则采用规约式陈述，不用问句组织定义。与相邻模块的分界只在入口写一次
 - **文风**：按人写给人读的方式来写：完整的句子、日常说法、段落连贯，不造抽象名词
 - **命名**：一个 leading word，不足时用 a-b。需要 and 才能命名时，先拆分对象
 - **形式**：优先用结构化 Markdown：粗体标签列表、编号步骤、表格、`> 例：` 引用块写 Example、Mermaid。一段一个重点，两三行以内。表头统一一种语言，单元格写成短语。有分支时先写分支条件，再分述各情形，编号只用于真正的步骤
@@ -89,7 +99,7 @@
 
 理论页与设计页的 frontmatter 带 `title`、`description`、`assertion`、`validity`。index 模块表的 Description 列与目录的 `.ok/frontmatter.yml` 从各页 frontmatter 生成，不手写。新文档从 `theory/.ok/templates/module.md` 开始，`validity: candidate`。`confirmed` 只在 user 确认后写入，只征求一次。之后的一般变更保持状态并明确告诉 user，重大变更或 user 不在场时的变更退回 `candidate`。含义见[效力](theory/primitive/validity.md)，字段与阶段规则见 [Frontmatter](ok/frontmatter.md)
 
-修改理论页或设计页后运行 `python3 -I .ok/scripts/derive.py --fix` 更新生成的内容，提交前运行 `derive.py` 与 `links.py` 核对。这两个脚本只补充 OpenKnowledge，职责见 [Convergence](ok/convergence.md)
+修改理论页、设计页或精选案例页后运行 `node .ok/scripts/derive.mjs --fix` 更新生成的内容，提交前运行 `node .ok/scripts/derive.mjs` 与 `node .ok/scripts/links.mjs` 核对。这两个脚本只补充 OpenKnowledge，职责见 [Convergence](ok/convergence.md)
 
 ## Versioning
 

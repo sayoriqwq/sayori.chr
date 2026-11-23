@@ -28,9 +28,9 @@ OpenKnowledge 是知识图谱，本仓期望概念聚合、统一。所以这里
 
 | Script | Duty |
 | --- | --- |
-| `derive.py` | 核对理论页与设计页字段齐全，生成模块表与目录说明，见 [Frontmatter 的 Generated](frontmatter.md#generated)。`--fix` 写回 |
-| `links.py` | 核对本仓 Markdown 的相对链接与锚点 |
+| `derive.mjs` | 核对理论页、设计页、精选案例页与 ok 页字段齐全，生成模块表、目录说明与[断言总览](assertions.md)，见 [Frontmatter 的 Generated](frontmatter.md#generated)。带上 `--fix` 参数写回 |
+| `links.mjs` | 核对本仓 Markdown 的相对链接与锚点 |
 
-修改理论页或设计页后运行 `python3 -I .ok/scripts/derive.py --fix`，提交前运行 `derive.py` 与 `links.py` 核对
+修改理论页、设计页或精选案例页后运行 `node .ok/scripts/derive.mjs --fix`，提交前运行 `node .ok/scripts/derive.mjs` 与 `node .ok/scripts/links.mjs` 核对
 
 [OpenKnowledge](index.md)

@@ -12,10 +12,12 @@
 
 | 位置 | 性质 | 内容 |
 | --- | --- | --- |
-| [theory/](theory/index.md) | 理论（真源） | 基础、协作领域与进化元层 |
-| [runtime/](runtime/index.md) | 设计 | 协作层怎样落实理论，实现在 sayori.run |
-| [dev/](dev/index.md) | 设计 | 工程层的定位与分界，实现在 sayori.dev |
-| [AGENTS.md](AGENTS.md) | 收敛规则 | 维护规则与紧凑词表，取自理论 |
-| [NOTES.md](NOTES.md) | 输入 | user 原始表达，user 专写 |
-| [ok/](ok/index.md) | 收敛规则 | 本仓用 OpenKnowledge 的字段与做法，不属于理论 |
-| `.ok/` | 知识库格式层 | OpenKnowledge 配置与补充它的维护脚本 |
+| [theory/](theory/index.md) | 理论真源 | 基础、协作领域与进化元层 |
+| [runtime/](runtime/index.md) | 协作层设计 | 协作层怎样落实理论，实现在 `sayori.run` |
+| [dev/](dev/index.md) | 工程层设计 | 工程层的定位与分界，实现在 `sayori.dev` |
+| [cases/](cases/index.md) | 精选案例 | 已被理论或设计正式吸收的脱敏偏差记录，供正文反例链接回溯 |
+| [ok/assertions.md](ok/assertions.md) | 断言总览 | 自动派生的全仓核心断言索引，供跨领域召回 |
+| [AGENTS.md](AGENTS.md) | 收敛规则 | 读取规范、维护规则与紧凑词表 |
+| [NOTES.md](NOTES.md) | 原始输入 | user 原始表达，user 专写 |
+| [ok/](ok/index.md) | 收敛规则 | 本仓用 OpenKnowledge 的字段与维护脚本 |
+| `.ok/` | 格式层 | OpenKnowledge 配置与维护脚本 |

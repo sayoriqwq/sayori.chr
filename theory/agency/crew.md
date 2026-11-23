@@ -45,7 +45,9 @@ user 可以直接进入任意 Station：
 
 > 例：QA Sailor 报告的问题看不明白，user 直接问这个 Sailor 当时测了什么、看到了什么，比经 Mate 转述更准确
 
-user 直接进入时，该 Station 以 user 为直接决定者，不再按向上层汇报的口径索要额外确认。被直接进入的 Station 照常完成自己的工作，变化按 [Notify](#notify) 通知。传话、催回执和安排交接由 agent 完成，user 不需要在 Station 之间跑腿
+user 直接进入时，该 Station 以 user 为直接决定者，直接依据 user 表达推进工作。被直接进入的 Station 照常完成自己的工作，变化按 [Notify](#notify) 通知。传话、催回执和安排交接由 agent 完成，user 在职责树中只需作出判断
+
+> 例：user 直接进入下层执行节点沟通时，节点仍按向上层汇报口径要求 user 提供额外配置证明，暴露出未以直接进入的 user 为决定者的偏差，见[直接进入节点的汇报口径偏差](../../cases/entered-node-voice.md)
 
 ## Notify
 
