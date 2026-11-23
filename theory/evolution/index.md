@@ -48,7 +48,7 @@ flowchart LR
 
 | Module | Description |
 | --- | --- |
-| [Derivation](derivation.md) | 理论怎样变成 agent 运行时取得的说明，哪些含义不能丢。写或修改 runtime，或 runtime 出问题要追溯到理论时读 |
+| [Derivation](derivation.md) | 理论怎样变成 agent 运行时取得的说明，哪些含义不能丢，以及出处怎样维护。写或修改 runtime、派生 Skill 或追溯理论变更时读 |
 | [Case](case.md) | 一次偏差怎样才算记下来了：要保留什么，观察与归因怎样分开。agent 做错了、被 user 纠正，或出现意外行为时读 |
 | [Evaluation](evaluation.md) | 一次修订是否真的有效、值不值得保留。修订了理论或 runtime，要决定采不采用时读 |
 

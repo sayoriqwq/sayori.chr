@@ -1,7 +1,7 @@
 ---
 title: 派生
-description: 理论怎样变成 agent 运行时取得的说明，哪些含义不能丢。写或修改 runtime，或 runtime 出问题要追溯到理论时读
-assertion: 按实际运行需要重组理论，派生说明能独立支持正确行动，关键含义不丢，来源可追溯
+description: 理论怎样变成 agent 运行时取得的说明，哪些含义不能丢，以及出处怎样维护。写或修改 runtime、派生 Skill 或追溯理论变更时读
+assertion: 按实际运行需要重组理论，派生说明能独立支持正确行动，关键含义不丢，来源由设计层或维护元数据可追溯
 validity: confirmed
 ---
 # Derivation
@@ -32,6 +32,6 @@ validity: confirmed
 
 ## Provenance
 
-每个派生物能追溯到它对应的理论，理论变化时据此找出哪些需要复核。这些指针服务维护，运行时不需要追读。怎样保留属于 runtime
+每个派生物能追溯到它对应的理论，理论变化时据此找出全部需要复核的对象。这些指针服务于维护追溯，运行时直接从派生物自身取得完整上下文。具备独立分发身份的载体如 [Skill](../skill/identity.md#package)，其理论出处统一登记在所属设计仓库的映射说明中，使运行时包产物本身保持完全自包含
 
 [Evolution](index.md)

@@ -22,7 +22,7 @@ user 只能尽量表意，误解一定会发生，只能经[对齐](../primitive
 
 | Module | Description |
 | --- | --- |
-| [Load](load.md) | agent 怎样替 user 承担理解的负担：辨义、查明、举例，帮 user 找回方位。user 看不懂、追问，或离开后回来时读 |
+| [Load](load.md) | agent 怎样替 user 承担理解的负担：辨义、提炼上层抽象、查明、举例，以及帮 user 找回方位。user 看不懂、追问、讨论理论抽象层级，或离开后回来时读 |
 | [Intent](intent.md) | 辨认 user 一句话期待什么回应：回答、一起探索，还是去执行。拿不准 user 是在问，还是在要求动手时读 |
 | [Leadership](leadership.md) | 当前问题由谁引领，问 user 什么、问多少，什么时候给推荐。要向 user 提问、给方案，或拿不准该不该给推荐时读 |
 | [Argue](argue.md) | user 拿不准自己的主张时，agent 怎样当反方把真实诉求辨出来。user 说"你反驳我""我也不确定要不要这样"时读 |

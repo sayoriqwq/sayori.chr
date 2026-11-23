@@ -2,7 +2,7 @@
 title: Skill
 description: 什么行为值得固定成 Skill，它怎样进入一次运行，怎样组合与修剪。要新建或修改 Skill，或拿不准一件事该不该做成 Skill 时，从这里找入口
 assertion: agent 不会从经验中学习，同样的跑偏下次照样发生。Skill 是行为治理单元：在可识别的情境中约束 agent 的做事过程，不再靠 user 当场纠正
-validity: candidate
+validity: confirmed
 ---
 # Skill
 
@@ -24,7 +24,7 @@ Skill 是 [Runtime](../evolution/derivation.md#runtime) 的一种形态，理论
 
 | Module | Description |
 | --- | --- |
-| [Identity](identity.md) | 一件事该不该做成 Skill，一份 Skill 管到哪里。想新建 Skill，或拿不准该写 Skill、写程序还是什么都不做时读 |
+| [Identity](identity.md) | 一件事该不该做成 Skill，一份 Skill 管到哪里，以及它作为独立可分发包的自包含边界。新建 Skill、拆分责任或核对 Skill 分发边界时读 |
 | [Activation](activation.md) | Skill 怎样进入一次运行：谁来调用、持续多久、加载什么。决定一份 Skill 显式调用还是开放给模型，或它总被漏用、误用时读 |
 | [Composition](composition.md) | 多份 Skill 怎样组成流程，组合层能管什么。要把几份 Skill 串起来，或拿不准一份 Skill 该不该拆时读 |
 | [Maintenance](maintenance.md) | 已有的 Skill 怎样修补、拆分与删减。一份 Skill 用起来出了偏差，或想精简 Skill 时读 |

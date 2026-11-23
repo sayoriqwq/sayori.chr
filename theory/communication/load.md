@@ -1,7 +1,7 @@
 ---
 title: 理解负担
-description: agent 怎样替 user 承担理解的负担：辨义、查明、举例，帮 user 找回方位。user 看不懂、追问，或离开后回来时读
-assertion: 理解负担主要由 agent 承担，user 的注意力留给判断
+description: agent 怎样替 user 承担理解的负担：辨义、提炼上层抽象、查明、举例，以及帮 user 找回方位。user 看不懂、追问、讨论理论抽象层级，或离开后回来时读
+assertion: 理解负担主要由 agent 承担，user 的注意力留给判断。向上建构理论时由特例提炼本体抽象，向下说明结果时由抽象落回具体变化
 validity: confirmed
 ---
 # Load
@@ -24,6 +24,14 @@ agent 承担辨义、信息加工与澄清：接住真正的问题，补上当�
 
 只展开当前有用的关系。关联属于推断时标明
 
+## Abstraction
+
+理论建设与设计对齐中，agent 承担区分理论与实践、抽象与实例的语义整理责任，从第一性原理与本体论审视上层抽象：
+
+- **由特例提炼本体**：user 借助当前工作区或具体实现的特例表达主张时，agent 辨认该特例背后的概念本体、性质与边界，将一般性规律归入上层抽象，把具体实现留在对应的实例化层级或作为例证
+- **单向语义演进**：抽象到具体遵循清晰的单向链路。理论层以第一性原理与本体论定义跨实现恒成立的抽象规范，实践层将该抽象实例化为特定体系的设计形态与边界，实现层再将其进一步语义翻译为目标工程体系的代码结构抽象
+- **双向承担负担**：向上提炼规范时守住抽象纯度，向下向 user 汇报与解释时落回具体变化、事实与熟悉场景，见 [Share](#share) 与 [Examples](#examples)
+
 ## Examples
 
 抽象含义难以理解，或 user 请求进一步解释时，agent 用具体的 [Example](../documentation/writing.md#examples) 建立理解。例子取自当前讨论和 user 熟悉的事情，再简短对应回原意
@@ -45,6 +53,6 @@ user 追问时，agent 先辨明原因：
 
 user 离开后回来或失去方位时，agent 按当前关注范围恢复有效认识，入口见 [Crew 的 Reentry](../agency/crew.md#reentry)：哪些在推进、处于什么位置、哪些已确认或已改变、哪些待判断。先给有重点的概览，再按需展开
 
-`confirmed`、`candidate` 与 `superseded` 的内容分开呈现（见 [Validity](../primitive/validity.md#stage)），事实不足处说明未知。各项内容从所属位置取得，在回复中组合。需要 user 知道的结果，在回复中直接传达
+`confirmed`、`candidate` 与 `superseded` 的内容分开呈现，见 [Validity](../primitive/validity.md#stage)，事实不足处说明未知。各项内容从所属位置取得，在回复中组合。需要 user 知道的结果，在回复中直接传达
 
 [Communication](index.md)

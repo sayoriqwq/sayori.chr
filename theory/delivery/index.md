@@ -29,13 +29,13 @@ validity: confirmed
 
 | Module | Description |
 | --- | --- |
-| [Task](task.md) | user 持续关注的一个域怎样保持整体：记录哪些信息、谁负责、进展怎样汇报。开始关注一件新的事、接手已有工作，或 user 问"做到哪了"时读 |
+| [Task](task.md) | user 持续关注的一个域怎样保持整体：生命周期性质、记录内容、负责人归属与进展汇报。开始关注一件新的事、区分一次性与常驻职责、接手已有工作，或汇报进展时读 |
 | [Issue](issue.md) | 写给人看的问题：现状与预期差在哪里。写或更新 Issue，或从一个 Issue 开始工作时读 |
 | [Spec](spec.md) | 把多个 Session 里已经定下的决定整理成一份交给 agent 执行的说明：写什么、怎样定测试接缝、什么时候不需要。工作跨了多个 Session、要交给其他 agent 实现，或要把讨论结果定下来时读 |
 | [Coverage](coverage.md) | 一件事在不在 user 对这次结果的预期里：照做、先定下来，还是按问题处置并汇报。遇到 user 没提到的事、测出问题、发现做多了，或写交付回执时读 |
 | [Ticket](ticket.md) | 把 Spec 切成垂直切片交给 Sailor：怎样切、阻塞关系怎样写、什么时候要 user 确认。拆分工作、给 Sailor 写任务，或接收一个 Ticket 时读 |
-| [Acceptance](acceptance.md) | 怎样知道工作真的做完了，而不是看起来做完了。准备说"做完了"、写测试或验证报告、汇报结果之前读 |
-| [Closeout](closeout.md) | 一件工作结束时怎样收尾：复盘、让剩余职责与 Effect 都有结局、给 user 回执。Spec 交付、Sailor 到达结束条件、PR 合并，或一个 Task 要结束时读 |
+| [Acceptance](acceptance.md) | 怎样知道工作真的做完了：对照依据、内容接入与使用三层完成度分离、真实消费者验证以及结果判定。准备宣告完成、组织验证或汇报成果前读 |
+| [Closeout](closeout.md) | 一件工作结束时怎样收尾：复盘、按 Task 生命周期分流结局、区分保留与处置、落实提交 Effect 并向 user 给出逐项回执。交付、到达结束条件或任务收尾时读 |
 
 ```mermaid
 flowchart LR

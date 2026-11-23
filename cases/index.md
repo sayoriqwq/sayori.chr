@@ -32,5 +32,8 @@ validity: confirmed
 | [Domains As One Tree](domains-as-one-tree.md) | 将两个独立工作区误读为同一棵职责树导致前置衍生阻塞验证的真实案例。核对多工作区领域隔离时读 |
 | [Foreign Worktrees Noise](foreign-worktrees-noise.md) | 环境检查跨工作区扫描共享仓库导致外区工作树淹没本区发现的真实案例。核对环境观察作用域边界时读 |
 | [Git Hygiene Gap](git-hygiene-gap.md) | 缺少统一工程卫生规则导致已合入工作树、草稿分支与忽略规则长期残留的真实案例。核对工程层归层边界时读 |
+| [Storage Contract Mismatch](storage-contract-mismatch.md) | 单元测试替身全部通过但真实存储消费者因接口签名与挂载一致性差异失败的真实案例。核对三层完成度与边界验证时读 |
+| [Preservation Is Not Disposition](preservation-is-not-disposition.md) | 确认文件具有保留价值并指派保管人后便停止推进，导致历史材料滞留现用配置目录且已合入分支未撤除的真实案例。核对收口处置与工作树清退边界时读 |
+| [Test Output Outside Task](test-output-outside-task.md) | 离线验证探针因缺失路径字段在工作区根目录生成意外目录，清退时仅检查已登记工作树与任务目录而漏检的真实案例。核对工作树清退核查范围时读 |
 
 [Repository](../index.md)

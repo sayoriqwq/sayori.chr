@@ -1,6 +1,6 @@
 # sayori.chr
 
-本仓保存 user（sayori）关于"我和 agent 如何协作"的理论，以及让它收敛的少量规则。`theory/` 是理论真源，`runtime/` 是 sayori 的 runtime 怎样落实理论的设计，根部文件是收敛规则与 user 的输入。本仓只存 user 自己的主张，历史由 Git 追溯
+本仓保存 user 关于"我和 agent 如何协作"的全部理论以及让它收敛的少量规则。`theory/` 声明全部跨实现恒成立的理论真源，`runtime/` 定义协作层的上游设计，`dev/` 定义成品工作区基座的上游设计，根部文件是收敛规则与 user 的原始输入。本仓只存 user 自己的主张，历史由 Git 追溯
 
 本文件与 [ok/](ok/index.md) 是本仓用 OpenKnowledge 的收敛规则，不是进化里的 Runtime，维护本仓不记 Case。规则取自[文档](theory/documentation/index.md)理论，理论修改后有意地同步过来，规则不好用时和 user 直接改
 
@@ -44,7 +44,7 @@
 | [Handoff](theory/agency/handoff.md) | 职责恰好一个负责人，以接收为准：Delegate、Return、Resume |
 | [Effect](theory/agency/effect.md) | 行动后留在外部的变化：始终有负责人、有结局。Pure 行动不留 Effect，Effectful 行动留下 |
 | [Issue](theory/delivery/issue.md) | 现状与预期的差距，写给 user 与同事看 |
-| [Task](theory/delivery/task.md) | user 注意力的一个域，Mate 负责，含 Pending |
+| [Task](theory/delivery/task.md) | user 注意力的一个域，分一次性与常驻两类，Mate 负责，含 Pending |
 | [Spec](theory/delivery/spec.md) | 交给 agent 执行的说明：已定的决定整理成一份，只综合不编造 |
 | [Ticket](theory/delivery/ticket.md) | 从 Spec 切下的垂直切片，恰好交给一个 Sailor，写明阻塞 |
 | [Coverage](theory/delivery/coverage.md) | 事项与 user 预期的关系：Agreed、Implied、Outside，约束范围并决定汇报什么 |
@@ -57,7 +57,10 @@
 | [Description](theory/documentation/description.md) | 指向内容自身的指针：当前问题该不该来这里 |
 | [Example](theory/documentation/writing.md#examples) | 说明规则的具体场景，`> 例：` 引用块，可引 Case |
 | [Leading Word](theory/documentation/writing.md#language) | 模型已理解的紧凑词语，锚定同一概念或行为 |
-| [Skill](theory/skill/index.md) | 行为治理单元：在可识别的情境中约束 agent 的做事过程，成立条件是可复发的跑偏 |
+| [Skill](theory/skill/index.md) | 行为治理单元：独立自包含的可分发包，成立条件是可复发的跑偏 |
+| [Git](theory/git/index.md) | 协作中的版本与隔离模型：区分产品仓与宿主仓、Attempt 与 Run、分权提交与工作树清退 |
+| [Attempt](theory/git/commit.md#integration) | 隔离工作树内围绕同一需求反复尝试与验证产生的过程提交 |
+| [Run](theory/git/commit.md#integration) | 成果变基并按文件级粗粒度重整语义后接入产品主仓的正式交付阶段 |
 | [Derivation](theory/evolution/derivation.md) | 将 Theory 转成自包含的 Runtime |
 | [Case](theory/evolution/case.md) | 一次偏差的可检查记录，只追加，经吸收的典型案例沉淀于 [cases/](cases/index.md) |
 | [Evaluation](theory/evolution/evaluation.md) | 用证据看一项修改是否带来值得保留的改善 |
@@ -100,6 +103,8 @@
 理论页与设计页的 frontmatter 带 `title`、`description`、`assertion`、`validity`。index 模块表的 Description 列与目录的 `.ok/frontmatter.yml` 从各页 frontmatter 生成，不手写。新文档从 `theory/.ok/templates/module.md` 开始，`validity: candidate`。`confirmed` 只在 user 确认后写入，只征求一次。之后的一般变更保持状态并明确告诉 user，重大变更或 user 不在场时的变更退回 `candidate`。含义见[效力](theory/primitive/validity.md)，字段与阶段规则见 [Frontmatter](ok/frontmatter.md)
 
 修改理论页、设计页或精选案例页后运行 `node .ok/scripts/derive.mjs --fix` 更新生成的内容，提交前运行 `node .ok/scripts/derive.mjs` 与 `node .ok/scripts/links.mjs` 核对。这两个脚本只补充 OpenKnowledge，职责见 [Convergence](ok/convergence.md)
+
+本仓常驻与可复用的维护脚本遵循体系主技术栈偏好，统一采用 Node.js 生态的 TypeScript 或 JavaScript 编写。仅服务单次会话命令行需求的一次性脚本由 agent 按需选用工具
 
 ## Versioning
 

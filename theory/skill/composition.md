@@ -2,7 +2,7 @@
 title: 组合
 description: 多份 Skill 怎样组成流程，组合层能管什么。要把几份 Skill 串起来，或拿不准一份 Skill 该不该拆时读
 assertion: 调用其他 Skill 的才是 Workflow，步骤多少不算。Workflow 负责整体结局，它可以收紧被调用的 Skill，不能放宽
-validity: candidate
+validity: confirmed
 ---
 # Composition
 

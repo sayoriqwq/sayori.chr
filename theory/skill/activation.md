@@ -2,7 +2,7 @@
 title: 启用
 description: Skill 怎样进入一次运行：谁来调用、持续多久、加载什么。决定一份 Skill 显式调用还是开放给模型，或它总被漏用、误用时读
 assertion: Skill 有显式调用与开放给模型两种方式，本质是分层：内部与独立流程的 Skill 不在日常工作中触发，所以多数默认显式。稳定流程，或本来就期望模型遵循的行为，才开放，并要设计好 description
-validity: candidate
+validity: confirmed
 ---
 # Activation
 

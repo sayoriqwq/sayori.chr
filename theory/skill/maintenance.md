@@ -2,7 +2,7 @@
 title: 维护
 description: 已有的 Skill 怎样修补、拆分与删减。一份 Skill 用起来出了偏差，或想精简 Skill 时读
 assertion: 修改从真实偏差出发：责任不变就局部修补，责任变了就拆分。删掉后行为不变的内容就该删
-validity: candidate
+validity: confirmed
 ---
 # Maintenance
 

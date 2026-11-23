@@ -24,15 +24,15 @@ validity: confirmed
 | [沟通](../theory/communication/index.md) | `confirmed` | user 只能尽量表意，双方经对齐使理解一致。agent 交给 user 的，是帮助 user 自己作判断的内容，会影响判断或行动的理解差异在判断之前让 user 看到 |
 | [意图](../theory/communication/intent.md) | `confirmed` | agent 辨认一句表达期待的回应，并按它回应 |
 | [引领](../theory/communication/leadership.md) | `confirmed` | 判断归 user，判断的准备归 agent。每一点上 user 先判断，agent 再回应：只问当前焦点核心的未知，问题只附理由，不附推荐 |
-| [理解负担](../theory/communication/load.md) | `confirmed` | 理解负担主要由 agent 承担，user 的注意力留给判断 |
+| [理解负担](../theory/communication/load.md) | `confirmed` | 理解负担主要由 agent 承担，user 的注意力留给判断。向上建构理论时由特例提炼本体抽象，向下说明结果时由抽象落回具体变化 |
 | [实证探索](../theory/communication/probe.md) | `confirmed` | 语言和现有材料不足以支持判断时，agent 在关键维度上构建足够真实的最简实践，取得依据 |
-| [验收](../theory/delivery/acceptance.md) | `confirmed` | 做完了没有，只能由环境里的证据对照 Spec 来核对，没有 Spec 的工作对照 Task 的当前记录，不看 agent 的报告，也不看 Ticket 关了几个。接不接受成果，由 user 判断 |
-| [收口](../theory/delivery/closeout.md) | `confirmed` | 一件工作结束时收口：经验有去处，剩余职责与 Effect 都有结局，user 收到逐项回执。Task 结束时，整个域退出注意力 |
+| [验收](../theory/delivery/acceptance.md) | `confirmed` | 完成与否只能由环境证据对照 Spec 或 Task 当前记录核对，内容完成、接入完成与使用验证各自独立成立。接不接受成果由 user 判断 |
+| [收口](../theory/delivery/closeout.md) | `confirmed` | 工作结束时完成复盘、结局与逐项回执，保留价值、正式归属与最终处置分别判断，版本提交在差异审阅窗口后作为必要 Effect 落盘。一次性 Task 彻底退出注意力，常驻 Task 保留至明确清退 |
 | [工作范围](../theory/delivery/coverage.md) | `confirmed` | 范围以 user 对这次结果的预期为准，它约束 agent 做到哪里，也决定向 user 汇报什么。Agreed 照做，Implied 定下来并说明，Outside 按错误或缺陷处置并汇报 |
 | [交付](../theory/delivery/index.md) | `confirmed` | user 无法把预期完整表达出来，注意力又极其有限。本领域让交付与预期之间的差异始终可见，结束的工作退出注意力 |
 | [Issue](../theory/delivery/issue.md) | `confirmed` | Issue 记录现状与 user 预期之间的差距，写给 user 与同事看，对技术人员可读 |
 | [Spec](../theory/delivery/spec.md) | `confirmed` | Spec 是交给 agent 执行的说明，把已经定下的决定整理成一份能活过 Session 的文件。只综合，不重开，不编造 |
-| [Task](../theory/delivery/task.md) | `confirmed` | Task 是 user 注意力的一个域：user 知道自己在做什么，会持续在这里做。它的当前记录让任何负责人都能接上 |
+| [Task](../theory/delivery/task.md) | `confirmed` | Task 是 user 注意力的一个域，按生命周期分为一次性与常驻两类，由唯一 Mate 负责。它的当前记录让任何负责人都能可靠接续 |
 | [Ticket](../theory/delivery/ticket.md) | `confirmed` | Ticket 是从 Spec 切下的一条垂直切片，贯穿每一层、可以单独验证，恰好交给一个 Sailor。Ticket 全部关闭，不等于 Spec 已经满足 |
 | [Agent](../theory/documentation/audience/agent.md) | `confirmed` | 面向 agent 的文档借助模型已有的语义能力，以清楚的范围、动作与完成标准指导执行，通过指针按需取得依据 |
 | [Colleague](../theory/documentation/audience/human/colleague.md) | `confirmed` | 给技术同事读的文档，在共同的基础认知之上，把定义讲清楚：问题是什么，文档承担验证时还有怎样验证它 |
@@ -45,10 +45,14 @@ validity: confirmed
 | [特殊文件名](../theory/documentation/special-filenames.md) | `confirmed` | 一些文件名带有约定：看到名字，就知道它承担什么、谁可以写 |
 | [书写](../theory/documentation/writing.md) | `confirmed` | 每个模块正面陈述自己的内容，按 user 的重点组织，读起来美观、有层次，一眼看到重点 |
 | [案例](../theory/evolution/case.md) | `confirmed` | 一次偏差的可检查记录，留下的是事实与证据，归因单独标明 |
-| [派生](../theory/evolution/derivation.md) | `confirmed` | 按实际运行需要重组理论，派生说明能独立支持正确行动，关键含义不丢，来源可追溯 |
+| [派生](../theory/evolution/derivation.md) | `confirmed` | 按实际运行需要重组理论，派生说明能独立支持正确行动，关键含义不丢，来源由设计层或维护元数据可追溯 |
 | [检验](../theory/evolution/evaluation.md) | `confirmed` | 在原定目标与边界不变的前提下，用证据看一项修改是否带来足够可信、值得保留的改善 |
 | [进化](../theory/evolution/index.md) | `confirmed` | agent 不会从经验中学习。user 的纠正都要落到 agent 下次得到的东西上，留下的每一条都要值得它占的位置 |
-| [理论](../theory/index.md) | `confirmed` | 组织 Sayori 关于"我和 agent 如何协作"的主张，作为理解的依据与派生 runtime 的真源 |
+| [提交](../theory/git/commit.md) | `confirmed` | 工作树内的局部试错与进入主仓的正式交付分属两个阶段，入仓前须变基并按文件级粗粒度重整语义提交。宿主仓按职责树实行 Mate 级分权提交，差异审阅窗口内保留现场，审阅或阶段结束后必须完成提交 |
+| [Git](../theory/git/index.md) | `confirmed` | Git 在协作中承担产品演进与状态溯源两种独立职责。产品仓追求清晰语义化的变更历史，宿主仓作为轻量事件源记录状态变迁，提交既是阶段落盘的必要 Effect，也服从 user 的差异审阅窗口 |
+| [仓库](../theory/git/repository.md) | `confirmed` | 产品仓承载语义化的产品演进，宿主仓承载工作区的状态变迁与溯源。安全入库口径由仓库性质与公开性共同决定，跟踪边界按文件职责划分，外层宿主仓保持轻量溯源定位 |
+| [工作树](../theory/git/worktree.md) | `confirmed` | 独立开发在隔离工作树中推进并登记用途与消费方，分支合入主干且无活跃消费方时即刻清退，具体节奏联动一次性与常驻两类 Task 生命周期并经四步现场核查落盘 |
+| [理论](../theory/index.md) | `confirmed` | 组织 Sayori 关于"我和 agent 如何协作"的全部核心理论，作为理解的依据与派生各类运行实现的真源 |
 | [用词](../theory/language.md) | `confirmed` | 以共同含义理解作者的表达，作者可以自由措辞 |
 | [前提](../theory/premise.md) | `confirmed` | 理论出自少数几个关于世界的事实。各领域由事实、原语与 user 的偏好、决定推出，推不出来的内容没有根据 |
 | [对齐](../theory/primitive/alignment.md) | `confirmed` | 通过交互校准对当前内容的理解，直到足以支持判断 |
@@ -62,11 +66,11 @@ validity: confirmed
 | [记录](../theory/primitive/record.md) | `confirmed` | 要活过行动者的内容，产生时就写到外面。流水只追加，当前状态从流水推出或单独维护 |
 | [作用域](../theory/primitive/scope.md) | `confirmed` | 说明一个对象在指定维度上覆盖什么、到哪里为止，每种范围只为自己的维度下结论 |
 | [效力](../theory/primitive/validity.md) | `confirmed` | 环境是现状的唯一真源，记录、记忆与总结都是它的缓存。每条信息的约束力清楚可辨：它是什么形态，走到哪个阶段，凭什么证据成立 |
-| [启用](../theory/skill/activation.md) | `candidate` | Skill 有显式调用与开放给模型两种方式，本质是分层：内部与独立流程的 Skill 不在日常工作中触发，所以多数默认显式。稳定流程，或本来就期望模型遵循的行为，才开放，并要设计好 description |
-| [组合](../theory/skill/composition.md) | `candidate` | 调用其他 Skill 的才是 Workflow，步骤多少不算。Workflow 负责整体结局，它可以收紧被调用的 Skill，不能放宽 |
-| [身份](../theory/skill/identity.md) | `candidate` | Skill 的成立条件是一种可复发的跑偏。它约束做事的过程，不保证答案正确。没有这种跑偏，就不需要 Skill |
-| [Skill](../theory/skill/index.md) | `candidate` | agent 不会从经验中学习，同样的跑偏下次照样发生。Skill 是行为治理单元：在可识别的情境中约束 agent 的做事过程，不再靠 user 当场纠正 |
-| [维护](../theory/skill/maintenance.md) | `candidate` | 修改从真实偏差出发：责任不变就局部修补，责任变了就拆分。删掉后行为不变的内容就该删 |
+| [启用](../theory/skill/activation.md) | `confirmed` | Skill 有显式调用与开放给模型两种方式，本质是分层：内部与独立流程的 Skill 不在日常工作中触发，所以多数默认显式。稳定流程，或本来就期望模型遵循的行为，才开放，并要设计好 description |
+| [组合](../theory/skill/composition.md) | `confirmed` | 调用其他 Skill 的才是 Workflow，步骤多少不算。Workflow 负责整体结局，它可以收紧被调用的 Skill，不能放宽 |
+| [身份](../theory/skill/identity.md) | `confirmed` | Skill 的成立条件是一种可复发的跑偏，它以独立身份和完全自包含的可分发包约束做事过程，理论出处统一在所属设计层维护 |
+| [Skill](../theory/skill/index.md) | `confirmed` | agent 不会从经验中学习，同样的跑偏下次照样发生。Skill 是行为治理单元：在可识别的情境中约束 agent 的做事过程，不再靠 user 当场纠正 |
+| [维护](../theory/skill/maintenance.md) | `confirmed` | 修改从真实偏差出发：责任不变就局部修补，责任变了就拆分。删掉后行为不变的内容就该删 |
 
 ## Runtime
 
@@ -87,7 +91,11 @@ validity: confirmed
 
 | 模块 | 阶段 | 断言 |
 | --- | --- | --- |
-| [工程层设计](../dev/index.md) | `candidate` | 工程层只放换一个工作区还原样成立的工程做法，不含协作协议，不含任何业务。sayori.dev 按版本被工作区固定，派活时以入口路径交给执行者 |
+| [Git 规约](../dev/git.md) | `confirmed` | Git 理论在工作区基座中按决策性质分别落到静态基座配置、确定性检查机制与两类独立工程 Skill，使结构边界常驻生效、机械卫生自动守卫、语义整理与收口清退由模型精准执行 |
+| [工作区基座](../dev/index.md) | `confirmed` | 工作区基座是成品的工作区基础装配方案，向上落实理论，向内接入协作层基础实现，并按决策性质将工程规约落实为静态基座配置、确定性检查机制与独立工程 Skill，全部理论真源与出处说明留在本仓 |
+| [工程 Skill](../dev/skills.md) | `confirmed` | 工作区基座交付的每份工程 Skill 都是具备独立身份与完全自包含的可分发包，消费工作区通过薄适配按名称组合并只收紧不放宽，全部 Skill 的理论出处统一登记在本页维护 |
+| [校验基建](../dev/verification.md) | `confirmed` | 工作区校验基建严格分离内容完成、接入完成与使用验证，测试优先守卫架构扩展点、端口契约与协议不变量，并以轻量确定性检查机制承担机械可判定的结构与卫生自检 |
+| [工作区](../dev/workspace.md) | `confirmed` | 成品工作区基座采用单层平铺任务区与薄入口骨架，统一接入共享的协作层基础实现，具体工作区仅填入拓扑、环境、知识与薄适配四个扩展槽即可运行 |
 
 ## Cases
 
@@ -105,11 +113,14 @@ validity: confirmed
 | [跨区工作树扫描淹没本区发现](../cases/foreign-worktrees-noise.md) | `confirmed` | 工作区环境观察必须严格限定在本工作区作用域之内，避免跨区枚举共享仓库状态淹没本区真正需要判断的发现 |
 | [工作区工程卫生规则缺位](../cases/git-hygiene-gap.md) | `confirmed` | 已合入工作树清退、草稿分支识别与忽略文件纪律属于跨工作区通用的工程层规范，缺位会在各消费区反复造成仓库卫生残留 |
 | [精选案例](../cases/index.md) | `confirmed` | 这里保存已被理论或设计正式吸收的脱敏经典 Case，按预期、实际、证据与归因组织，使每条规则的反例都可回溯到真实经历 |
+| [保留材料误作完成处置](../cases/preservation-is-not-disposition.md) | `confirmed` | 保留价值、正式归属与最终处置是三个独立判断，记录保管人或搬移位置不能替代按目录职责完成归位与清退 |
 | [离开回归后的信息过载](../cases/reentry-overload.md) | `confirmed` | 状态视图必须按原诉求持久呈现未结事项与待决项，避免按短时间窗口截断或迫使 user 从长文与决策清单里自行拼接全貌 |
 | [交回缺少子作用域声明](../cases/return-missing-declaration.md) | `confirmed` | 派活时在父子作用域原子建立一致的工作声明，才能保证交回与验收共享同一前置而不事后拒收 |
 | [结构失配掩盖身份报错](../cases/schema-error-masked-identity.md) | `confirmed` | 读写共享同一强类型契约且直接暴露底层失败原因，才能避免单条新字段事件毒害整条读链并误报身份故障 |
 | [汇报失败后沉默交回](../cases/silent-report-failure.md) | `confirmed` | 汇报写入失败必须显式阻断交回并沿阻塞通道唤醒上层，避免节点声明完成后整条交回静默丢失 |
 | [单屏标签页布局偏差](../cases/single-screen-tab.md) | `confirmed` | 默认分屏把多个 agent 塞进同一视野会直接破坏 user 的单屏注意力边界，委派必须默认独占新标签页 |
+| [测试替身掩盖真实存储契约](../cases/storage-contract-mismatch.md) | `confirmed` | 两个测试替身各自通过只证明替身条件下的逻辑成立，必须沿真实消费者与真实接口契约取得使用验证证据 |
+| [探针在工作目录留范围外写入](../cases/test-output-outside-task.md) | `confirmed` | 探针与测试脚本可能通过真实写盘路径在工作目录留下范围外产物，清退核查须覆盖实际执行目录与写入出口，而非仅查已登记工作树 |
 
 ## OpenKnowledge
 
