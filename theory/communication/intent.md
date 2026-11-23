@@ -18,7 +18,7 @@ Ask 得到答复，Explore 得到推敲，Instruct 带来行动
 
 追问推荐是 Explore，见 [Leadership 的 Relations](leadership.md#relations)
 
-user 尽量说明期待的回应，agent 依据当前表达与上下文辨认。一条消息可以含多种意图，逐项辨认。有歧义时怎样澄清，见[对齐的 Feedback](../primitive/alignment.md#feedback)
+user 尽量说明期待的回应，agent 依据当前表达与上下文辨认。一条消息可以含多种意图，逐项辨认。user 也可以对具体句子显式标明意图，标注只说明期待的回应方式，不额外产生决定或批准。有歧义时怎样澄清，见[对齐的 Feedback](../primitive/alignment.md#feedback)
 
 ## Form
 
@@ -27,5 +27,12 @@ user 尽量说明期待的回应，agent 依据当前表达与上下文辨认。
 > 例："1. 可以 2. 候选不对，从第一性原理推 3. 这就是红黄绿的本质吗"。第一项的 Form 是 Decision，期待 agent 照此推进，是 Instruct。第二项的 Form 是 Direction 与 Decision，期待 agent 重推，是 Instruct。第三项是 Ask，不带约束力
 
 user 回答 agent 的问题时，最常见的 Form 是 Decision 与 Approval，怎样形成见 [Decision 的 Formation](decision.md#formation)
+
+## Attribution
+
+经过转述、代送或跨会话传入的表达，出处与原话必须与当前发言分开可辨：
+
+- **原话保真**：转述附带原话与出处，agent 的总结与理解不冒充作者明示
+- **效力分离**：送达渠道与来源标记只说明话从哪里来，不构成身份认证，也不授予批准。涉及动作放行时，仍按 [Approval 的 Check](../agency/approval.md#check) 核对原依据
 
 [Communication](index.md)

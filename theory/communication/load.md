@@ -10,6 +10,8 @@ validity: confirmed
 
 agent 承担辨义、信息加工与澄清：接住真正的问题，补上当前理解所需的状态与前提。user 直接用自然语言表达，偏好无需论证
 
+汇报与说明以具体的变化、事实和影响呈现，不拿内部结构术语或操作说明替代结论，不要求 user 先读懂系统内部机制
+
 理解的负担在 agent，判断的负担在 user。哪些自己查明、哪些问 user，见 [Leadership](leadership.md)
 
 ## Connect

@@ -1,68 +1,65 @@
 ---
 title: Station
-description: sayori 的协作层怎样落实 Station：登记与承载、Sailor 的专业、/branch 分出新 Station、Crew 视图与常驻焦点。要改派活与分支、设计 Crew 视图，或拿不准一个新 Session 该归哪个 Station 时读
-assertion: 每个 Station 一个 scope、同一时刻一个 Session、一行焦点。偏题由 user 用 /branch 分出新 Station，新 Task 须经 user 批准。Crew 视图只读记录，不调用模型，只把需要 user 的事放到眼前
+description: Station 的身份与 Sailor 专业、Firstmate 单一入口与重启恢复、常驻焦点以及 /branch 主题分叉。要设计或修改角色身份、入口恢复、焦点维护或分支协议时读
+assertion: 每个 Station 拥有固定作用域、单一承载会话与一行常驻焦点。Firstmate 由单一前台入口恢复或新建，重启恢复由协作层独占，/branch 只选定讨论主题而不授予实施或资源批准
 validity: candidate
 ---
 # Station
 
-本页落实 [Crew](../theory/agency/crew.md) 的 Station 与 Ranks，各 harness 的适配按本页实现
+本页落实[职责树](../theory/agency/crew.md)的 Station、专业、入口、焦点与分支协议
 
-## Register
+## Identity
 
-- **scope**：`task/<task>/<station>`，Firstmate 用 `firstmate`。上层 scope 在派活或分出时固定，同一 Station 换 Session 时不变
-- **承载**：同一时刻一个 Session。换 Session 时从记录接回，见 [Session](../theory/agency/session.md#identity)
-- **焦点**：每个 Station 一行焦点，由当前 agent 在实质变化时随正常对话记录，换 Session 时随 Station 接回
-- **显示**：`Role · Scope`，例如 `Mate · pi-collaboration`。Sailor 加专业，例如 `QA Sailor · Ticket 3`
+- **作用域**：Firstmate 固定为工作区根作用域，其余节点按所属 Task 与节点标识构成层次作用域。上层作用域在派活或分出时固定，同一 Station 更换[会话](../theory/agency/session.md)时不变
+- **显示**：界面统一标明角色与所属作用域，Sailor 额外标明专业
+- **专业**：Sailor 内置五类默认专业，类型定义对消费工作区保持开放，允许按领域扩展：
 
-## Specialty
-
-Sailor 的默认专业，工作区可以增加：
-
-| Specialty | Answers | Returns |
+| 专业 | 回答什么 | 交回什么 |
 | --- | --- | --- |
-| Implement | 把改动做出来 | 提交或 draft PR、先失败后通过的测试、Effect |
-| Review | 改动按规范与 Spec 对不对 | 分级问题，各附依据 |
-| QA | 真实环境里整体能不能用、用户路径通不通 | 实际观察、复现步骤、证据缺口 |
-| Diagnosis | 原因在哪 | 因果证据，事实与推断分开，最小修法候选 |
-| Research | 外部与官方怎样做 | 带出处的结论、适用条件、未核部分 |
+| 实现 | 把改动做出来 | 提交或草稿 PR、验证证据与 Effect |
+| 审阅 | 改动按规范与 Spec 对不对 | 分级问题与依据，只读不改代码 |
+| 质量验收 | 真实环境里整体能不能用、用户路径通不通 | 实际观察、复现步骤与证据缺口 |
+| 诊断 | 原因在哪 | 因果证据、事实与推断分开、最小修法候选，不顺手修 |
+| 调研 | 外部与官方怎样做 | 带出处的结论、适用条件与未核部分 |
 
-- **独立**：Review 与 QA 不由同一张 Ticket 的 Implement 担任
-- **只读**：Review 不改代码，Diagnosis 不顺手修。需要实验时按 [Probe](../theory/communication/probe.md)，有界并收回
+审阅与质量验收不由同一张 Ticket 的实现节点担任，需要实验验证时按[实证探索](../theory/communication/probe.md)有界执行并收回
+
+## Entry
+
+- **单一入口**：user 在终端前台执行 Firstmate 入口命令。机制核对本工作区本地状态，存在可恢复会话且无活实例冲突时直接续上原会话，无绑定时直接登记并启动新会话
+- **显式换代**：提供显式换新入口，在确认旧实例正常退出、进程消失后以新会话接替 Firstmate 作用域。旧会话文件保留，未结责任与在途回执沿同一作用域继续，原批准不自动复制
+- **唯一性**：一个工作区同一时刻只允许一个活 Firstmate 实例。冲突核验仅依据真实进程存活与统一互斥锁，不把开发期易变属性或自身前台进程当成冲突，拒绝时直接说明具体原因
+
+## Recovery
+
+系统重启后由协作层独占恢复入口，容器只承载进程与布局，不并行执行原生续会话：
+
+1. **前置核对**：恢复前确认容器服务端已关闭原生续会话能力，未确认时明确阻塞，不盲目重拉
+2. **按树分级**：先恢复 Firstmate，再恢复存在未结工作的 Mate，Sailor 只按明确选择恢复。已匹配的活实例不重复启动，缺原始会话或现场冲突时报告阻塞，不猜测身份
+3. **两步接续**：先令原会话可交互，再按最新汇报与待决项接续工作。恢复本身不生成新派活，也不代表原工作已完成
+
+## Focus
+
+每个 Station 在本地状态维护一行[焦点](../theory/primitive/focus.md)，更换会话时随 Station 接回。在具备原生扩展的宿主中常驻显示在待办清单上方并可独立折叠，不改写也不替代宿主自带的会话待办：
+
+- **实质更新**：只在明确切换主题时由当前 agent 随正常对话更新一次，同题多轮不重复写入，不为此额外唤醒模型
+- **转场清空**：user 明确将旧事交后台处理、尚未开启新题时，清空前台焦点而不编造新题，等首个明确新题出现再记下
+- **后台隔离**：后台交回、通知或回执不改写当前前台焦点
+- **顺问提示**：偏离已记焦点时，agent 照常回答并在首行提示可用 `/branch` 分出，原焦点保持不变，分不分由 user 决定
+
+> 例：曾因用户将收口移交后台并转聊新主题时焦点仍锁在旧题，导致后续多轮定位漂移
 
 ## Branch
 
-一个 Session 只谈一个主题。偏题时 agent 照常回答并提示，见 [Focus 的 Change](../theory/primitive/focus.md#change)，分不分出去由 user 决定
+`/branch` 由 user 发起，将当前会话中偏题的一段对话分到独立 Station，全过程零模型调用：
 
-`/branch` 由 user 执行，本身不调用模型：
+- **语义边界**：命令与所附自然语言只选定讨论主题与方向，不授予实施、迁移或资源批准。无偏题提示的裸命令先向 user 澄清目标，不盲目生成待决定项
+- **三阶段合同**：
+  1. **记录**：以偏题的 user 消息为锚点分叉新会话、写入新 Station 登记、最后裁剪原会话退回到锚点之前。裁剪前任一步失败，原会话保持原样
+  2. **启动**：同一 Task 下的新话题在原 Station 下登记为子 Mate，在所属 Task 的 Herdr workspace 开不抢焦点的新标签页恰好一次，user 留在原窗格。属于新工作时交 Firstmate 承接并按批准边界登记新 Task，启动失败明示未启动且不重复拉起
+  3. **首轮**：新会话收到转送的原话后按正常对话展开
+- **隔离边界**：两个会话互不带回结论，结果经记录回到 Task。新 Station 不复制原身份、会话待办与资源所有权，已有批准按[批准的 Transfer](../theory/agency/approval.md#transfer)对照原据核对
 
-1. **fork**：从偏题的那条 user 消息起分出新 Session
-2. **裁剪**：原 Session 退回到那条消息之前，焦点不变
-3. **登记**：按下表给新 Session 一个 Station
-
-| 新话题属于 | 登记 |
-| --- | --- |
-| 同一个 Task | 原 Station 下的 Mate |
-| 别的工作，user 已批准 | Firstmate 登记新 Task |
-| 别的工作，user 未批准 | 停下等 user |
-
-`/branch` 后可跟一句自然语言，原样作为新 Session 的第一条指令。带上目标即表示 user 知道并批准。两个 Session 之后互不带回结论，结果经记录回到所属 Task。新 Session 不复制原 Station 的身份与资源所有权，批准按 [Transfer](../theory/agency/approval.md#transfer) 随所分的工作核对
-
-## View
-
-Crew 按[原诉求](../theory/agency/crew.md#reentry)呈现事项。首屏回答「这件事现在怎样，是否需要我行动」。能查到、值得常驻、需要 [Wake](wake.md) 分别判断：
-
-| Section | Content |
-| --- | --- |
-| 等你决定 | target 为 user 的 Pending，只写决定什么，展开见背景、选项与代价，不带倾向 |
-| 需要留意 | 会影响 user 判断的例外及其后果。超出原范围本身不占一行，须扩大批准范围才继续时，列入「等你决定」 |
-| 进行中 | 用 user 认得的问题标识事项，说明已核实的结果或最近记录的进度。没有验收记录不等于在等 user 验收 |
-
-- **详情**：展开看 Coverage、Effect、相关 Session 最近记录的进度及原据。会改变选择的范围或后果直接写在首屏，其余不要求 user 先读懂
-- **零模型**：打开、刷新、展开、进入与返回都只读记录与有界现场观察，不开模型回合
-- **减法**：已有结局的失败、无遗留责任的缺报、已收口的 Task 都不显示
-- **计数**：等你决定与需要留意的计数在每个 Station 的界面常驻，为零时不显示
-- **入口**：打开视图与从进入的 Station 返回是同一个动作，返回时回到视图原位置
-- **范围**：只看本工作区，另一个工作区有自己的 Firstmate 与视图
+> 例：曾将 `/branch` 后的自然语言讨论目标当作新 Task 实施批准门槛，导致用户明确要求分出讨论后仍被反复追问批准
 
 [Runtime](index.md)

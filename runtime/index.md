@@ -1,66 +1,58 @@
 ---
-title: Runtime 设计
-description: sayori 的协作层怎样落实理论：形态、记录、唤醒、回路与工作区怎样使用。设计或修改 sayori.run，或拿不准一条内容该放理论、设计、实现还是工作区时读
-assertion: 理论写本源，这里写 sayori 的 runtime 怎样落实它，sayori.run 只实现理论与这里的设计。设计由 agent 提出候选，user 确认
+title: Runtime
+description: sayori 协作层怎样落实理论的上游规范：形态、记录、委托、Station、视图、唤醒、消息、回路与消费。设计或修改协作层实现，或拿不准一条内容该放哪一层时读
+assertion: 理论定义概念与恒成立的主张，这里定义 sayori 协作层的上游设计规范，sayori.run 严格按此落实。设计由 agent 提出候选，经 user 确认成为实现真源
 validity: candidate
 ---
 # Runtime
 
 ## Position
 
-[派生](../theory/evolution/derivation.md)把理论变成 agent 运行时取得的 Runtime，理论在多处写明某个问题"属于 runtime"。这些问题的回答是 user 对自己这套 runtime 的主张，和理论一样经 user 确认，所以放在本仓，与理论分开
+[派生](../theory/evolution/derivation.md)把理论转成 agent 运行时取得的 Runtime，理论多处写明某个问题属于 runtime。这些问题的回答是 user 对自己这套协作层的上游主张，与理论分开存放在本仓，经 user 确认后约束实现
 
-| Layer | Place | Content | Owner |
+| 层级 | 位置 | 内容 | 责任方 |
 | --- | --- | --- | --- |
-| 理论 | [theory/](../theory/index.md) | 换一种 runtime 仍然成立的主张 | user 确认 |
-| 协作层设计 | 本目录 | sayori 的协作层怎样落实理论 | agent 提候选，user 确认 |
-| 工程层设计 | [dev/](../dev/index.md) | 通用工程做法的定位与分界 | agent 提候选，user 确认 |
-| 实现 | sayori.run、sayori.dev | 协作层的机制与内容、工程层的规范与 Skill，各自带版本 | 实现 agent，追溯到上面几层 |
-| 工作区 | 各工作区 | 本工作区的配置、知识、Task 与特有规则 | user 与当前负责人 |
+| 理论 | [theory/](../theory/index.md) | 跨 runtime 恒成立的概念与主张 | user 确认 |
+| 协作层设计 | 本目录 | sayori 协作层的上游规范、边界与不变量 | agent 提候选，user 确认 |
+| 工程层设计 | [dev/](../dev/index.md) | 通用工程做法与轻量化工作区基座规范 | agent 提候选，user 确认 |
+| 实现 | `sayori.run`、`sayori.dev` | 具体代码架构、字段结构、命令行入口、外部化内容与工程 Skill | 实现 agent，追溯到上游设计 |
+| 工作区 | 各消费工作区 | 遵守工程基座的薄路由、业务知识、Task 与特有规则 | user 与当前负责人 |
 
-一条内容放哪一层，依次问四个问题，见[消费的 Border](consumer.md#border)。sayori.run 或 sayori.dev 里出现只对某个工作区成立的内容，按缺陷处理
+一条内容放哪一层，依次问四个问题，见[消费的 Border](consumer.md#border)。共享底座中出现只对某个工作区成立的内容，按缺陷处理
 
 理论不指向本目录，本目录指向它所落实的理论
 
 ## Delegated
 
-理论交给 runtime 的问题，以及回答所在的位置：
+理论交给协作层的全部问题及其上游规范位置：
 
-| Question | Theory | Answer |
+| 问题 | 理论出处 | 上游规范 |
 | --- | --- | --- |
-| 形态与组织 | [Derivation](../theory/evolution/derivation.md#runtime) | [形态](architecture.md) |
-| 怎样通知 | [Crew](../theory/agency/crew.md#notify) | [唤醒](wake.md) |
-| Effect 登记的位置与格式 | [Effect](../theory/agency/effect.md#register) | [记录](records.md#formats) |
-| 批准的记录格式与传递 | [Approval](../theory/agency/approval.md) | [记录](records.md#formats) |
-| Decision 记录后怎样告诉 user | [Decision](../theory/communication/decision.md#record) | [记录](records.md#formats) |
-| Case 的存放、整理与版本 | [Evolution](../theory/evolution/index.md#loop) | [回路](loop.md) |
-| 派生物的出处 | [Derivation](../theory/evolution/derivation.md#provenance) | [回路](loop.md#provenance) |
-| Skill 的载体 | [Skill](../theory/skill/index.md) | [消费](consumer.md#package) |
-| Issue 的模板与位置 | [Issue](../theory/delivery/issue.md#selection) | 未定 |
-| Ticket 的位置 | [Ticket](../theory/delivery/ticket.md#composition) | 未定 |
-| Coverage 的标记 | [Coverage](../theory/delivery/coverage.md#expression) | [记录格式](records.md#formats)，种类、完成状态与 Effect 生命周期分开 |
-| 提问的格式 | [Leadership](../theory/communication/leadership.md#questions) | 未定 |
-
-## Gaps
-
-sayori.run 现在与本设计的差距，按[回路](loop.md)逐项处理：
-
-- **内容未独立**：角色说明写在 TS 代码里，测试断言说明的文本
-- **工作区约定写死**：`task/*/worktrees.json`（兼容 `task/now/*/`）的位置与格式写在环境 adapter 里
-- **Case 字段不足**：Case 事件只有 `caseId`、`message`、`basis`
-- **未发布为 Pi package**：工作区按源码路径直接加载扩展
-- **过程记录未迁出**：`sayori.run/docs` 保存着建造过程的 Spec、Ticket、交付记录与 Decision Log。设计决定迁到本目录，建造过程的 Task 记录放到 `~/workspace/` 下，见 sayori.run 的 [Decision Log](../../sayori.run/docs/decisions.md) 0064、0065
-- **Report 没有理论出处**：它是 Task 的 Progress 与 Handoff 的 Return 在 runtime 中的形式，要不要补一页理论由 user 决定
+| 形态与载体分级 | [派生](../theory/evolution/derivation.md#runtime) | [形态](architecture.md) |
+| 怎样通知与唤醒 | [职责树](../theory/agency/crew.md#notify) | [唤醒](wake.md) |
+| Effect 登记的位置与契约 | [Effect](../theory/agency/effect.md#register) | [记录的 Contracts](records.md#contracts) |
+| 批准的记录契约与核对 | [批准](../theory/agency/approval.md) | [记录的 Contracts](records.md#contracts) |
+| 决定记录后怎样告知 user | [决定](../theory/communication/decision.md#record) | [记录的 Contracts](records.md#contracts) |
+| 工作范围的呈现分级 | [工作范围](../theory/delivery/coverage.md#expression) | [记录的 Contracts](records.md#contracts) |
+| Case 的存放、整理与检验 | [进化](../theory/evolution/index.md#loop) | [回路](loop.md) |
+| 派生物的出处 | [派生](../theory/evolution/derivation.md#provenance) | [回路的 Provenance](loop.md#provenance) |
+| Skill 的载体与分发 | [Skill](../theory/skill/index.md) | [消费的 Distribution](consumer.md#distribution) |
+| Issue 的模板与位置 | [Issue](../theory/delivery/issue.md#selection) | [记录的 Contracts](records.md#contracts)，细则归[工程层](../dev/index.md) |
+| Ticket 的位置 | [Ticket](../theory/delivery/ticket.md#composition) | [记录的 Contracts](records.md#contracts)，细则归[工程层](../dev/index.md) |
+| 提问的格式 | [引领](../theory/communication/leadership.md#questions) | [消息的 Asking](message.md#asking) |
 
 ## Modules
 
 | Module | Description |
 | --- | --- |
-| [Station](station.md) | sayori 的协作层怎样落实 Station：登记与承载、Sailor 的专业、/branch 分出新 Station、Crew 视图与常驻焦点。要改派活与分支、设计 Crew 视图，或拿不准一个新 Session 该归哪个 Station 时读 |
-| [Architecture](architecture.md) | sayori 的协作层跑在什么上，Crew 怎样落成进程，各 harness 怎样适配，哪些规则做成机制。要改宿主、角色的启动与派活、接入新的 harness，或决定一条规则做成机制还是内容时读 |
-| [Records](records.md) | runtime 把什么记在哪里：事件 Store、Task 的当前记录与环境各自的职责，事件种类对应的理论概念，以及理论交给 runtime 的记录格式。要新增事件种类、改 Store，或拿不准一项事实该写在哪里时读 |
-| [Wake](wake.md) | 一项变化怎样让该知道的一方取得：记录、提示与唤醒怎样分工，谁在什么条件下被叫醒。设计通知、新增唤醒来源，或协调回合过多时读 |
-| [Loop](loop.md) | 进化回路在 sayori 里怎样转：Case 记在哪里、谁整理、怎样决定与采用、怎样检验，派生物怎样保留出处。记 Case、提修订、发布新版本，或理论改了要找受影响的派生物时读 |
-| [Consumer](consumer.md) | 一个工作区怎样使用 sayori 的协作层与工程层：工作区提供什么，版本怎样固定，一条规则该放协作层、工程层还是工作区。接入新工作区、升级版本，或拿不准一条规则放哪里时读 |
+| [Architecture](architecture.md) | 协作层跑在什么载体上，不同扩展能力的 harness 怎样分级实现同一理论，架构端口怎样隔离，机制与内容怎样分开，测试守什么边界。要设计协作层架构、接入新 harness 或划分机制与测试边界时读 |
+| [Records](records.md) | 协作层把哪类事实放在哪里，持久日志与本地易失状态怎样分离，事件种类对应哪些理论概念，以及核心记录的上游契约。要新增事件、划分存储边界或核对记录格式时读 |
+| [Delegation](delegation.md) | 职责树上下层之间怎样派活、交回、验收、结束委托、收口 Task 以及退站。要设计或修改派活、交回、验收、收口与退站状态机时读 |
+| [Station](station.md) | Station 的身份与 Sailor 专业、Firstmate 单一入口与重启恢复、常驻焦点以及 /branch 主题分叉。要设计或修改角色身份、入口恢复、焦点维护或分支协议时读 |
+| [View](view.md) | 面向 user 的只读职责树视图怎样组织信息、分层展开依据、保证键鼠阅读体验，以及怎样直接进出负责的 Station。要设计或修改只读浮层、状态栏计数或进出交互时读 |
+| [Wake](wake.md) | 变化怎样在可查、常驻与唤醒三级注意力之间分配，事件驱动观测与送达边界怎样守住，以及各类唤醒的停止条件。要设计通知层级、修改唤醒规则或解决重复唤醒问题时读 |
+| [Message](message.md) | 跨通道进入会话的文本怎样保真来源，行级意图标注怎样在人与模型间传递原意，以及向 user 提问的格式规范。要设计跨节点传话、意图标注或提问呈现时读 |
+| [Loop](loop.md) | 进化回路在 sayori 里怎样运转：Case 记在哪里、谁整理、怎样决定与修订、单一共享分发下怎样采用与检验，以及派生物怎样保留出处。要记 Case、提修订、发布共享底座或追溯理论变化时读 |
+| [Consumer](consumer.md) | 协作层与工程层怎样以单一共享方式分发，工作区需要提供哪些最小契约，多工作区怎样保持领域隔离，以及一条规则怎样判定归层。要接入新工作区、瘦身消费区或拿不准一条规则放哪里时读 |
 
 [Repository](../index.md)

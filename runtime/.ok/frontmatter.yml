@@ -1,2 +1,2 @@
-title: Runtime 设计
-description: sayori 的协作层怎样落实理论：形态、记录、唤醒、回路与工作区怎样使用。设计或修改 sayori.run，或拿不准一条内容该放理论、设计、实现还是工作区时读
+title: Runtime
+description: sayori 协作层怎样落实理论的上游规范：形态、记录、委托、Station、视图、唤醒、消息、回路与消费。设计或修改协作层实现，或拿不准一条内容该放哪一层时读
