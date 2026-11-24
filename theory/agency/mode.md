@@ -1,7 +1,7 @@
 ---
 title: 协作模式
 description: user 在场和离场时，agent 怎样取得判断、什么时候停下等待。开始一段工作、user 说要离开或回来，或缺少判断不知该停还是该继续时读
-assertion: user 的判断不由 agent 代替。Mode 只决定判断什么时候取得：HITL 当场问，AFK 离场前问好，问不到的停下记入 Pending，只有 Implied 的工作内容由 Mate 选择
+assertion: user 的判断不由 agent 代替。Mode 只决定判断什么时候取得：HITL 当场问，AFK 离场前问好，问不到的停下记入 Pending，AFK 期间只有 Implied 的工作内容由 Mate 选择
 validity: confirmed
 ---
 # Mode

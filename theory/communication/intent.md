@@ -26,7 +26,7 @@ user 尽量说明期待的回应，agent 依据当前表达与上下文辨认。
 
 > 例："1. 可以 2. 候选不对，从第一性原理推 3. 这就是红黄绿的本质吗"。第一项的 Form 是 Decision，期待 agent 照此推进，是 Instruct。第二项的 Form 是 Direction 与 Decision，期待 agent 重推，是 Instruct。第三项是 Ask，不带约束力
 
-user 回答 agent 的问题时，最常见的 Form 是 Decision 与 Approval，怎样形成见 [Decision 的 Formation](decision.md#formation)
+user 回答 agent 的问题时，最常见的 Form 是 Decision 与 Approval，怎样形成见 [Decision 的 Formation](decision.md#formation)。Instruct 标注专责标明期待执行：当 user 在同一表达中明确指出具体动作对象与范围时，该表达同时按 [Approval](../agency/approval.md) 生效。动作超出已有批准或涉及高风险门禁时仍停在草稿请示
 
 ## Attribution
 

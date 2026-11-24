@@ -27,7 +27,7 @@ Task 按生命周期性质分为两类，统一承载阶段目标与持续职责
 | 一次性 Task | 面向明确的交付终点 | 阶段副产物达成后激进清退 | 目标收口后退出工作载体并退出注意力 |
 | 常驻 Task | 承载长期持续的职责域 | 阶段成果持续合并，回收单次副产物并保留长期上下文 | 持续存在，直至 user 明确下达清退时彻底收口 |
 
-两类 Task 在职责树中均由唯一 [Mate](../agency/crew.md) 负责，其对应的工作树与分支清退节奏见[工作树的 Retirement](../git/worktree.md#retirement)
+两类 Task 在职责树中均由唯一 [Mate](../agency/crew.md) 负责，其阶段交付走[工作收口](closeout.md#levels)，终结退出走 Task 撤除，隔离副本的清理节奏见[变更的 Isolation](change.md#isolation)
 
 ## Information
 

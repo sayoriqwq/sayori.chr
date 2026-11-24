@@ -17,7 +17,7 @@ agent 的行为只由模型和上下文决定，见[前提](../premise.md)。所
 ## Limits
 
 - **有限**：每一项都占位置，见[前提](../premise.md)
-- **会消失**：Session 结束或被压缩，上下文就没了，要活过它的内容写到外面，见 [Record](record.md)
+- **会消失**：单次执行结束或上下文被压缩，上下文随之消失，要活过行动者的内容写到外面，见 [Record](record.md)
 - **是缓存**：上下文里关于现状的内容会过时，以环境为准，见 [Validity 的 Source](validity.md#source)
 
 [Primitive](index.md)

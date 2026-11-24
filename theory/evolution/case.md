@@ -8,7 +8,7 @@ validity: confirmed
 
 ## Purpose
 
-Case 记录一次偏差，连接实际经历与后续修订。偏差可以是失败、user 的纠正，或未预期行为（包括意外产生的 [Effect](../agency/effect.md#kinds)）。它是 [Record](../primitive/record.md#kinds) 的 Log，产生时就写，只追加
+Case 记录一次偏差，连接实际经历与后续修订。偏差可以是失败、user 的纠正、未预期行为，以及意外产生的 [Effect](../agency/effect.md#kinds)。它是 [Record](../primitive/record.md#kinds) 的 Log，产生时就写，只追加
 
 ## Content
 

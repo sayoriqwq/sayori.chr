@@ -1,17 +1,29 @@
 ---
 title: 职责树
-description: 弄清该找谁、谁负责什么：Firstmate、Mate、Sailor 各管什么，状态从哪里看，变化要通知谁。分派工作、跨 Task 协调，或 user 直接找某个 Station 时读
-assertion: user 是 Captain，对全部结果负责。agent 组成职责树，负责组织与执行，user 只做判断，可以放心离开，回来时能可靠地接上
+description: 弄清工作区隔离边界、谁负责什么：Workspace、Firstmate、Mate、Sailor 各管什么，状态从哪里看，变化要通知谁。分派工作、跨 Task 协调，或 user 直接找某个 Station 时读
+assertion: user 是 Captain，对全部结果负责。每个 Workspace 独立承载一棵职责树，agent 负责组织与执行，user 只做判断，可以放心离开，回来时能可靠地接上
 validity: confirmed
 ---
 # Crew
+
+## Workspace
+
+Workspace 是单棵独立职责树的顶层隔离边界，同时界定三项独立作用域：
+
+- **唯一总入口**：每个 Workspace 拥有唯一的 Firstmate 与独立的职责树
+- **独立记录界**：事件存储、工作记录与状态视图限定在本 Workspace 之内，不与其他 Workspace 混用
+- **独立观察界**：环境观察与资源核查严格限定在本 Workspace 覆盖范围内
+
+Workspace 属于逻辑协作隔离边界，独立于具体版本仓库形态。Task 是 Workspace 内部承载 user 持续注意力的切片，两者分属不同层次
+
+> 例：不同业务领域的工作区曾被误读为同一棵职责树的上下级，环境检查也曾跨区扫描共享仓库，分别见[隔离工作区误作单一职责树](../../cases/domains-as-one-tree.md)与[跨区工作树扫描淹没本区发现](../../cases/foreign-worktrees-noise.md)
 
 ## Ranks
 
 | Rank | Duty | Availability |
 | --- | --- | --- |
-| Captain（user） | 方向与判断，包括接不接受成果，对全部结果负责 | 按自己的节奏进入或离开 |
-| Firstmate | 工作区唯一的日常总入口，负责全局的组织与委派，经 user 批准登记 Task | 始终可用 |
+| Captain | 即 user，负责方向与判断，包括接不接受成果，对全部结果负责 | 按自己的节奏进入或离开 |
+| Firstmate | 所属 Workspace 唯一的日常总入口，负责全局组织与委派，按 user 决定登记 Task | 始终可用 |
 | Mate | 一个范围的负责人，最常见的范围是一个 [Task](../delivery/task.md)。组织这个范围的工作，也可以亲自执行，是 user 进入它的入口 | 执行时可能暂时无法回应 |
 | Sailor | 一张 Ticket 的执行者，按专业区分，例如 Implement、Review、QA | 专注于本块 |
 
@@ -19,7 +31,7 @@ Firstmate 要始终能回应 user，所以不接长时间的执行。很小、�
 
 Firstmate 下面按 Task 设 Mate，Mate 下面可以再设 Mate 负责其中一部分，层级按实际需要设置，不必每次配齐。下层 Mate 只负责分给它的范围：批准随工作转交，只覆盖这个范围，它不扩大上层的 Task，也不绕过上层请 user 接收。小事 Mate 直接做，不必派 Sailor
 
-Mate 与 Sailor 的分界是工作交回之后 user 的关注还在不在：还在的是 Mate，这块做完就结束的是 Sailor。Mate 守着一个范围值更（watch），Sailor 完成一张 Ticket
+Mate 与 Sailor 的分界是工作交回之后 user 的关注还在不在：还在的是 Mate，这块做完就结束的是 Sailor。Mate 守着一个范围持续值更，Sailor 完成一张 Ticket
 
 > 例：一个配置整理的负责人持有七张 Ticket，持续数周，user 反复回来讨论，它是 Mate。实现其中一张 Ticket、到 draft PR 为止的是 Sailor
 

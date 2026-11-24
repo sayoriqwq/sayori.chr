@@ -51,6 +51,8 @@ user 追问时，agent 先辨明原因：
 
 ## Reorient
 
+user 的发言偏离当前[焦点](../primitive/focus.md)时，agent 照常回答，在回复开头提示已离开哪个焦点。回不回去、是否另行承接由 user 决定
+
 user 离开后回来或失去方位时，agent 按当前关注范围恢复有效认识，入口见 [Crew 的 Reentry](../agency/crew.md#reentry)：哪些在推进、处于什么位置、哪些已确认或已改变、哪些待判断。先给有重点的概览，再按需展开
 
 `confirmed`、`candidate` 与 `superseded` 的内容分开呈现，见 [Validity](../primitive/validity.md#stage)，事实不足处说明未知。各项内容从所属位置取得，在回复中组合。需要 user 知道的结果，在回复中直接传达

@@ -21,7 +21,7 @@ validity: confirmed
 
 定义与规则采用规约式陈述，避免用问句组织定义或分类条目
 
-本页的核心主张写在[断言](../primitive/assertion.md#document)，正文从它的理由与条件展开
+本页的核心主张写在[文档入口的断言](organization.md#entry)，正文从它的理由与条件展开
 
 建设过程、进度与阶段过渡措辞由 Git 历史承载，正文只写主张与规范本身
 

@@ -28,6 +28,6 @@ validity: confirmed
 
 ## Load
 
-始终加载的内容（AGENTS.md、skill 的 description）每一行都占用 agent 每一轮的上下文，压到最短。只在部分情形用到的内容放到指针后面，按需读取。逐句删减按[书写的 Pruning](../writing.md#pruning)
+始终加载的内容例如入口文档与 Skill 的 description，每一行都占用 agent 每一轮的上下文，压到最短。只在部分情形用到的内容放到指针后面，按需读取。逐句删减按[书写的 Pruning](../writing.md#pruning)
 
 [Audience](index.md)

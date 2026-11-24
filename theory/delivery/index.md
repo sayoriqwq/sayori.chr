@@ -34,8 +34,9 @@ validity: confirmed
 | [Spec](spec.md) | 把多个 Session 里已经定下的决定整理成一份交给 agent 执行的说明：写什么、怎样定测试接缝、什么时候不需要。工作跨了多个 Session、要交给其他 agent 实现，或要把讨论结果定下来时读 |
 | [Coverage](coverage.md) | 一件事在不在 user 对这次结果的预期里：照做、先定下来，还是按问题处置并汇报。遇到 user 没提到的事、测出问题、发现做多了，或写交付回执时读 |
 | [Ticket](ticket.md) | 把 Spec 切成垂直切片交给 Sailor：怎样切、阻塞关系怎样写、什么时候要 user 确认。拆分工作、给 Sailor 写任务，或接收一个 Ticket 时读 |
+| [Change](change.md) | 变更载体的用途与公开性边界、探索试错与正式交付分离、并发隔离与在途现场保护、差异审阅窗口以及分权持久化模型。整理变更历史、保护并发改动或落盘工作记录时读 |
 | [Acceptance](acceptance.md) | 怎样知道工作真的做完了：对照依据、内容接入与使用三层完成度分离、真实消费者验证以及结果判定。准备宣告完成、组织验证或汇报成果前读 |
-| [Closeout](closeout.md) | 一件工作结束时怎样收尾：复盘、按 Task 生命周期分流结局、区分保留与处置、落实提交 Effect 并向 user 给出逐项回执。交付、到达结束条件或任务收尾时读 |
+| [Closeout](closeout.md) | 一件工作或一个 Task 结束时怎样收尾：解耦工作收口与 Task 撤除、完成复盘、落实记录持久化与 Effect 结局、区分保留与处置并向 user 给出逐项回执。阶段交付或任务撤除时读 |
 
 ```mermaid
 flowchart LR

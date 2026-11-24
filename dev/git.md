@@ -1,23 +1,58 @@
 ---
 title: Git 规约
-description: Git 理论在工作区基座中的三类载体落地映射、按职责分层的忽略基座以及提审与收口执行流。在工作区基座落实 Git 配置、检查机制或工程 Skill 时读
-assertion: Git 理论在工作区基座中按决策性质分别落到静态基座配置、确定性检查机制与两类独立工程 Skill，使结构边界常驻生效、机械卫生自动守卫、语义整理与收口清退由模型精准执行
+description: 将变更理论与收口理论落实到 Git 工程体系：产品仓与版本化记录宿主仓的职责分界、Attempt 到 Run 的变基整理、单次与常驻工作树生命周期、四步清退核查与按职责忽略基座。设计 Git 配置、脚本或工程 Skill 时读
+assertion: Git 规约将变更与收口理论落地为静态基座配置、确定性巡检与工程 Skill，严格区分版本化记录提交与外部 Effect，明确产品仓变基语义整理、两类工作树清退时机与四步现场核查
 validity: confirmed
 ---
 # Git
 
 ## Mapping
 
-[Git 理论](../theory/git/index.md)在工作区基座中按[载体分流规则](index.md#realization)分别落实，使每条规范落在最恰当的执行层次：
+本页将[变更](../theory/delivery/change.md)、[Task 的 Lifetime](../theory/delivery/task.md#lifetime)与[收口](../theory/delivery/closeout.md)实例化到 Git 工程体系，并按[载体分流规则](index.md#realization)分配至三类载体：
 
-| 理论依据 | 落实载体 | 在工作区基座中的具体形态 |
+| 上游依据 | 落实载体 | 在工作区基座中的具体形态 |
 | --- | --- | --- |
-| [仓库的 Kinds](../theory/git/repository.md#kinds)与 [Visibility](../theory/git/repository.md#visibility) | 静态基座配置 | 工作区薄入口扩展槽显式声明本宿主仓公开性与旗下各仓库性质 |
-| [仓库的 Tracking](../theory/git/repository.md#tracking) | 静态基座配置 | 标准 `.gitignore` 按职责分层模板，内置运行态、凭据、大体积产物与嵌套独立仓边界 |
-| [提交的 Review](../theory/git/commit.md#review) | 静态基座配置 | 工作区基座常驻声明差异审阅窗口纪律与收口必落盘约束 |
-| [工作树的 Retirement](../theory/git/worktree.md#retirement) | 确定性检查机制 | 接入工作区环境端口的轻量巡检机制，识别已合入工作树、未忽略嵌套仓与超阈值大文件 |
-| [提交的 Integration](../theory/git/commit.md#integration) | 独立工程 Skill | Git 提审整合 Skill，负责主干变基、将本地 Attempt 按文件级粗粒度重整为 Conventional Commits 语义提交与公开内容甄别 |
-| [提交的 Ownership](../theory/git/commit.md#ownership)与[工作树的 Audit](../theory/git/worktree.md#audit) | 独立工程 Skill | Git 收口清退 Skill，负责区分一次性与常驻 Task、执行 Mate 分权提交或冲突升级 Firstmate、保护他人现场与四步清退核查 |
+| [变更的 Carrier](../theory/delivery/change.md#carrier) | 静态基座配置 | 工作区薄入口扩展槽显式声明产品仓与版本化记录宿主仓的公开性，标准 `.gitignore` 按四类职责分层 |
+| [变更的 Review](../theory/delivery/change.md#review) | 静态基座配置 | 工作区基座常驻声明 user 差异审阅窗口纪律与收口必落盘约束 |
+| [变更的 Isolation](../theory/delivery/change.md#isolation) | 确定性检查机制 | 接入工作区环境端口的轻量巡检机制，扫描本区已合入工作树、未忽略嵌套仓与超阈值大文件 |
+| [变更的 Integration](../theory/delivery/change.md#integration) | 工程流程与按需 Skill | 提审或合入主干前基于目标主干变基，按文件级粗粒度重整为 Conventional Commits 语义提交并甄别公开泄露 |
+| [变更的 Review](../theory/delivery/change.md#review)与[收口](../theory/delivery/closeout.md) | 独立工程 Skill | Git 收口清退 Skill，落实 Mate 分权提交、冲突升级 Firstmate、保护他人未提交现场与四步工作树清退核查 |
+
+## Semantics
+
+在 Git 中严格守住 [Record](../theory/primitive/record.md) 与 [Effect](../theory/agency/effect.md) 的正交边界：
+
+- **产品仓**：承载代码、理论或公开分发包的正式交付载体。产品仓上的临时工作树与任务分支属于 Byproduct，对外推送、提审 PR 与发布跨越共享与公开边界，按 Intended Effect 与 [Approval](../theory/agency/approval.md) 核对
+- **版本化记录宿主仓**：承载工作区合同、规格、回执与索引的过程记录载体。宿主仓本地提交归属 [Record](../theory/primitive/record.md) 持久化，独立于外部 Effect 登记，服从 Mate 分权提交与差异审阅窗口
+
+## Integration
+
+产品仓的局部试错与正式交付遵循以下 Git 规约：
+
+1. 在隔离工作树与任务分支上围绕需求推进局部 Attempt，保持主干检出目录干净
+2. 成果进入 Run 阶段准备提审或合入主干前，先基于目标主干执行变基，再按文件级粗粒度将反复试错重整为遵循 Conventional Commits 规范的语义提交
+3. 公开仓与产品仓提交前严格甄别凭据、私密环境信息与调试噪声
+4. 提审或合入后的追加修复以独立明确的语义提交记录，不与本地试错历史混杂
+
+## Worktree
+
+独立工作树在工作区环境契约中登记路径、分支、用途、负责人与退出条件，并按两类形态分别界定清退时机：
+
+- **单次开发工作树**：服务单个切片或一次性目标。当分支提交已完整合入目标主干且核实无活跃消费方时立即清退，一次性 Task 激进收口并移除工作载体
+- **常驻长期工作树**：服务常驻 Task 的长期工作现场。阶段[工作收口](../theory/delivery/closeout.md#levels)时持续合并成果并回收单次临时分支，长期工作树本身保留至 user 明确下达 Task 撤除时彻底清退
+
+## Audit
+
+执行工作树、分支与工程资源清退时，依次完成以下四步现场核查：
+
+1. 核查工作树的独有提交、未提交文件与忽略文件，确认尚具价值的独有产出已转移至正式归属位置
+2. 核查实际执行目录与写入出口是否存在由探针、测试替身或临时脚本留下的范围外写入
+3. 核查关联服务、端口与共享资源的真实消费方，仅停止专有资源并完整保护共享依赖
+4. 分别核实保留价值、正式归属与最终处置三项判断，在有效批准内同时清退工作树、已合入分支与临时材料，并回到环境回读确认实际状态
+
+> 例：离线验证探针因缺失路径配置将二十四个模拟文件写入工作区根目录，仅检查已登记工作树与任务目录导致范围外残留被漏检，见[探针在工作目录留范围外写入](../cases/test-output-outside-task.md)
+
+> 例：确认待清理目录具有保留价值并指派保管人后便宣告完成，导致历史材料滞留现用配置目录且已合入分支仍未删除，见[保留材料误作完成处置](../cases/preservation-is-not-disposition.md)
 
 ## Ignore
 
@@ -32,11 +67,11 @@ validity: confirmed
 
 ## Lifecycle
 
-涉及产品仓交付或宿主仓收口的工程动作，在工作区基座中遵循以下有序执行流：
+涉及产品仓交付或版本化记录宿主仓收口时，遵循以下有序执行流：
 
 1. 从工作区入口识别目标仓库属于产品仓、公开宿主仓还是私有宿主仓，确定对应甄别与提交口径
-2. 核对当前工作树是否存在他人在途未提交改动，以及 user 是否已声明差异审阅窗口
-3. 产品仓准备提审或合入主干前，启用 Git 提审整合 Skill 完成变基、文件级粗粒度语义整理、追加修复区分与安全内容甄别
-4. 宿主仓阶段留档或任务收口时，在差异审阅窗口结束后启用 Git 收口清退 Skill，由所属 Mate 精确提交本 Task 记录，出现冲突时交由 Firstmate 统一整合，并按 Task 生命周期完成工作树四步清退核查
+2. 核对当前工作树是否存在他人在途未提交改动，精确暂存自身范围以保护他人现场，并核对 user 是否已声明差异审阅窗口
+3. 产品仓接入主干前完成变基、文件级粗粒度语义整理与公开安全甄别，合入并确认无消费方后按工作树类型执行四步清退核查
+4. 宿主仓在差异审阅窗口结束后由所属 Mate 精确提交本 Task 记录，出现冲突时交由 Firstmate 统一整合，使记录持久化在收口时完整落盘
 
 [Dev](index.md)

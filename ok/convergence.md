@@ -12,15 +12,16 @@ validity: confirmed
 
 ## Parts
 
-- **AGENTS.md**：维护本仓的规则与紧凑词表，取自理论。文档理论修改后，有意地同步过来
-- **`.ok/scripts/`**：补充 OpenKnowledge 的维护脚本
-- **本专题**：上述两者所落实的字段与做法
+- **AGENTS.md**：维护本仓的规则与校验入口，取自理论。文档理论修改后，有意地同步过来
+- **GLOSSARY.md**：全套理论的共享术语词表与语言白名单，供本仓与外层工作区统一引用
+- **`.ok/scripts/`**：补充 OpenKnowledge 的确定性维护与结构 lint 脚本
+- **本专题**：上述组件所落实的字段、结构校验与定期语义巡检规约
 
 ## Vocabulary
 
 OpenKnowledge 是知识图谱，本仓期望概念聚合、统一。所以这里比一般文档多一条约束：已有词汇或已定义的内容，沿用原来的说法，不另造同类表述。一个意思在全仓只用一种说法
 
-> 例：对具体动作的放行统一叫"批准"（Approval），不混用许可、授权、认可。行动造成的变化统一叫 Effect，不另写"后果"
+> 例：对具体动作的放行统一叫批准，对应概念词 Approval，不混用许可、授权、认可。行动造成的变化统一叫 Effect，不另写后果
 
 一般文档没有这条限制，表意好、可读性好才是重点，见[书写](../theory/documentation/writing.md)
 
@@ -28,9 +29,10 @@ OpenKnowledge 是知识图谱，本仓期望概念聚合、统一。所以这里
 
 | Script | Duty |
 | --- | --- |
-| `derive.mjs` | 核对理论页、设计页、精选案例页与 ok 页字段齐全，生成模块表、目录说明与[断言总览](assertions.md)，见 [Frontmatter 的 Generated](frontmatter.md#generated)。带上 `--fix` 参数写回 |
+| `derive.mjs` | 核对受管页面字段齐全，生成模块表、目录说明与[断言总览](assertions.md)，见 [Frontmatter 的 Generated](frontmatter.md#generated)。带上 `--fix` 参数写回 |
 | `links.mjs` | 核对本仓 Markdown 的相对链接与锚点 |
+| `lint.mjs` | 核对不动点无环 DAG、理论单向独立、实现名零泄漏与写作硬格式红线，见 [Lint](lint.md) |
 
-修改理论页、设计页或精选案例页后运行 `node .ok/scripts/derive.mjs --fix`，提交前运行 `node .ok/scripts/derive.mjs` 与 `node .ok/scripts/links.mjs` 核对
+修改受管页面后运行 `node .ok/scripts/derive.mjs --fix`，提交前依次运行 `node .ok/scripts/derive.mjs`、`node .ok/scripts/links.mjs` 与 `node .ok/scripts/lint.mjs` 核对
 
 [OpenKnowledge](index.md)

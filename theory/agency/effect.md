@@ -41,7 +41,7 @@ Kind 说明一个 Effect 的寿命跟着什么走：
 | Kind | Lifetime | Ending |
 | --- | --- | --- |
 | Intended | 跟着交付物，工作结束后仍要存在 | 交付时转交给 user |
-| Byproduct | 跟着工作，为完成工作而产生 | 工作结束时收回 |
+| Byproduct | 跟着所属工作作用域，分阶段级与 Task 级 | 阶段级随[工作收口](../delivery/closeout.md#levels)收回，Task 级随 Task 撤除收回 |
 
 > 例：一次数据迁移，迁移本身是 Intended，迁移前做的备份表是 Byproduct。验证通过后，迁移交给 user，备份表删除
 

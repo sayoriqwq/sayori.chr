@@ -43,7 +43,7 @@ const files = execFileSync(
   { encoding: "utf8" },
 )
   .split(/\s+/)
-  .filter((f) => f && !f.includes("/.ok/templates/"))
+  .filter((f) => f && !f.includes("/.ok/templates/") && fs.existsSync(f))
   .sort();
 
 const broken = [];

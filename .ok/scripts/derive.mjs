@@ -22,12 +22,14 @@ const FIX = process.argv.includes("--fix");
 const FIELDS = ["title", "description", "assertion", "validity"];
 const ASSERTIONS_PATH = "ok/assertions.md";
 const SECTIONS = [
+  ["Foundation", "__ROOT__"],
   ["Theory", "theory/"],
   ["Runtime", "runtime/"],
   ["Dev", "dev/"],
   ["Cases", "cases/"],
   ["OpenKnowledge", "ok/"],
 ];
+const ROOT_MANAGED = ["VISION.md", "GLOSSARY.md"];
 
 function frontmatter(filePath) {
   const text = fs.readFileSync(filePath, "utf8");
@@ -48,6 +50,8 @@ function listPages() {
       "ls-files",
       "-co",
       "--exclude-standard",
+      "VISION.md",
+      "GLOSSARY.md",
       "theory/*.md",
       "runtime/*.md",
       "dev/*.md",
@@ -58,7 +62,7 @@ function listPages() {
   );
   return out
     .split(/\s+/)
-    .filter((f) => f && !f.includes("/.ok/"))
+    .filter((f) => f && !f.includes("/.ok/") && fs.existsSync(f))
     .sort();
 }
 
@@ -92,9 +96,12 @@ function renderAssertions(allPages) {
     "",
   ];
   for (const [heading, prefix] of SECTIONS) {
-    const group = allPages.filter(
-      (p) => p.startsWith(prefix) && p !== ASSERTIONS_PATH,
-    );
+    const group =
+      prefix === "__ROOT__"
+        ? allPages.filter((p) => ROOT_MANAGED.includes(p))
+        : allPages.filter(
+            (p) => p.startsWith(prefix) && p !== ASSERTIONS_PATH,
+          );
     if (group.length === 0) continue;
     lines.push(`## ${heading}`, "", "| 模块 | 阶段 | 断言 |", "| --- | --- | --- |");
     for (const p of group) {

@@ -14,7 +14,7 @@ validity: confirmed
 
 ## Scope
 
-本领域处理信息本身：怎样组织，为谁书写，怎样书写。信息的约束力是原语 [Validity](../primitive/validity.md)。各领域的信息都由本领域承载。信息放在哪里、怎样注入给 agent（plugin、codemod 等），属于 runtime。Skill 的机理见 [Skill](../skill/index.md)，它的载体同样属于 runtime
+本领域处理信息本身：怎样组织，为谁书写，怎样书写。信息的约束力是原语 [Validity](../primitive/validity.md)。各领域的信息都由本领域承载。信息放在哪里、怎样通过插件或自动注入机制交给 agent，属于 runtime。Skill 的机理见 [Skill](../skill/index.md)，它的载体同样属于 runtime
 
 ## Modules
 
@@ -24,6 +24,6 @@ validity: confirmed
 | [Audience](audience/index.md) | 动笔前先确定这份文档给谁读，人和 agent 共读时怎样处理。开始写任何文档或产物之前读 |
 | [Writing](writing.md) | 所有文档共用的写法：文风、命名、形式、Example、标点、语言与修订。动笔写或修改任何文档时读 |
 | [Description](description.md) | 写好一条 description，让读者在打开之前就能看出该不该来这里。写 md 模块、目录或 skill 的 description，或 agent 总是找错、漏找某份内容时读 |
-| [Special Filenames](special-filenames.md) | NOTES、index、AGENTS 等文件名各自的约定，以及谁可以写。创建或修改这些文件，尤其是碰 NOTES.md 之前读 |
+| [Special Filenames](special-filenames.md) | VISION、NOTES、index、AGENTS、GLOSSARY 与 README 等文件名各自的约定，以及谁可以写。创建或修改这些文件，尤其是碰 NOTES.md 之前读 |
 
 [Theory](../index.md)

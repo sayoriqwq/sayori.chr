@@ -20,11 +20,11 @@ validity: confirmed
 
 | Module | Description |
 | --- | --- |
-| [Crew](crew.md) | 弄清该找谁、谁负责什么：Firstmate、Mate、Sailor 各管什么，状态从哪里看，变化要通知谁。分派工作、跨 Task 协调，或 user 直接找某个 Station 时读 |
+| [Crew](crew.md) | 弄清工作区隔离边界、谁负责什么：Workspace、Firstmate、Mate、Sailor 各管什么，状态从哪里看，变化要通知谁。分派工作、跨 Task 协调，或 user 直接找某个 Station 时读 |
 | [Session](session.md) | 换了 Session，agent 的身份、职责和未完的事怎样接上。Session 要结束、上下文快满或被压缩，或在新 Session 里接手已有工作时读 |
 | [Mode](mode.md) | user 在场和离场时，agent 怎样取得判断、什么时候停下等待。开始一段工作、user 说要离开或回来，或缺少判断不知该停还是该继续时读 |
 | [Approval](approval.md) | 一个动作能直接做，还是要先问 user。准备 push、部署、改数据库、发 Issue，或接手别人的工作、情况有变时读 |
-| [Handoff](handoff.md) | 把工作交出去、接过来或交回去时，双方要交代和取得什么。委派 Ticket、换 Session 接续、交回结果，或接手一个已中断的工作时读 |
+| [Handoff](handoff.md) | 把工作交出去、接过来或交回去时，双方要交代和取得什么，以及语义确认与机制确定性两类接收方式。委派 Ticket、换 Session 接续、交回结果，或接手已中断工作时读 |
 | [Effect](effect.md) | 管好 agent 留在外面的东西：临时资源、发出的评论、改过的数据。起临时资源、交接或结束工作，或 user 问"外面现在留下了什么"时读 |
 
 [Theory](../index.md)

@@ -32,11 +32,12 @@ validity: confirmed
 | 工作声明 | [Task](../theory/delivery/task.md) | 声明一项工作的目标、归属与上下文入口 |
 | 负责变更 | [负责](../theory/primitive/ownership.md) | 登记或移交某项工作的当前负责人 |
 | 汇报 | [Task 的 Progress](../theory/delivery/task.md#progress) 与[交接的 Return](../theory/agency/handoff.md#return) | 结构化进展与交回汇报，一次记录供分层阅读 |
-| 缺报 | 缺报事实 | 节点结束或交回时缺少最新汇报的客观记录 |
+| 缺报 | [交接的 Return](../theory/agency/handoff.md#return)与[效力的 Evidence](../theory/primitive/validity.md#evidence) | 节点结束或交回时缺少最新汇报的客观记录 |
 | 待决项 | [Task 的 Information](../theory/delivery/task.md#information) 与[职责树的 Notify](../theory/agency/crew.md#notify) | 待 user 决定、交回待核、阻塞或交上层协调的事项 |
 | 验收结论 | [验收](../theory/delivery/acceptance.md) | 对一次交回的验收判断，支持追加更正，以最新为准 |
 | 委托结束 | [职责树的 Ranks](../theory/agency/crew.md#ranks) | 由约定结束方在自身作用域写下的委托结束事实 |
-| 任务收口 | [收口](../theory/delivery/closeout.md) | Task 的显式收口记录，覆盖正常交付与直接中止 |
+| 阶段收口 | [收口的 Levels](../theory/delivery/closeout.md#levels) | Spec 或阶段切片的交付收口记录，所属 Task 保持活跃延续 |
+| 任务撤除 | [收口的 Levels](../theory/delivery/closeout.md#levels) | Task 的终结退出记录，覆盖一次性 Task 完成、取消与常驻 Task 清退 |
 | 决定 | [决定的 Record](../theory/communication/decision.md#record) | 已形成的决定，含轻重、理由与取代指向 |
 | 批准 | [批准](../theory/agency/approval.md) | user 授予的动作批准及其原轮依据与四维范围 |
 | Effect | [Effect 的 Register](../theory/agency/effect.md#register) | 留在外部世界的变化登记、转交与结局 |
@@ -52,6 +53,6 @@ validity: confirmed
 - **批准**：记录动作、工作、条件、时效四维范围与 user 原话及原轮入口。执行前与跨会话交接时直接对照原轮依据与后续变化核对范围
 - **决定**：记录选定去向、轻重、明示与推断理由及取代指向，写入后返回序号与出处供告知 user，支持确定性导出可读的 Decision Log
 - **Case**：拆分预期、实际与证据入口，缺失项显式留空。观察事实 Fact 与原因假设 Inference 分字段记录，按只追加事件折叠生命周期，涵盖未处理、已处理、已验证与已复发四个状态
-- **外部指针**：[Issue](../theory/delivery/issue.md#selection) 的模板位置与 [Ticket](../theory/delivery/ticket.md#composition) 的切分存放归属[工程层](../dev/index.md)与消费工作区约定。协作层在事件中只保存指向它们的入口指针
+- **外部指针**：[Issue](../theory/delivery/issue.md#selection) 的模板位置与 [Ticket](../theory/delivery/ticket.md#composition) 的切分存放归属[工作区基座](../dev/index.md)与消费工作区约定。协作层在事件中只保存指向它们的入口指针
 
 [Runtime](index.md)

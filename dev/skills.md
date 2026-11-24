@@ -1,7 +1,7 @@
 ---
 title: 工程 Skill
-description: 独立自包含工程 Skill 的打包契约、消费工作区薄适配覆写机制、标准 Skill 清单及其理论出处总表，以及退场纪律。设计工程 Skill、编写工作区薄适配或追溯 Skill 理论依据时读
-assertion: 工作区基座交付的每份工程 Skill 都是具备独立身份与完全自包含的可分发包，消费工作区通过薄适配按名称组合并只收紧不放宽，全部 Skill 的理论出处统一登记在本页维护
+description: 独立自包含工程 Skill 的打包契约、消费工作区薄适配覆写机制、已有真实案例支撑的 Skill 出处总表，以及退场纪律。设计工程 Skill、编写薄适配或追溯理论依据时读
+assertion: 工作区基座交付的每份工程 Skill 都是具备独立身份与完全自包含的可分发包，消费工作区通过薄适配按名称组合并只收紧不放宽，仅登记已有真实案例支撑的治理型 Skill，理论出处统一维护于本页
 validity: confirmed
 ---
 # Skills
@@ -25,18 +25,13 @@ validity: confirmed
 
 ## Registry
 
-工作区基座的标准工程 Skill 及其上游理论出处统一登记如下。仅当对应工程过程存在可复发跑偏且须由模型作语义判断时设立 Skill，其余规则交由静态基座配置或确定性检查机制承载：
+严格依据 [Skill 的 Condition](../theory/skill/identity.md#condition)，本表当前仅登记已有真实[精选案例](../cases/index.md)支撑的可复发工程跑偏 Skill。其余工程流程待后续补充真实案例或扩展 Skill 分类理论后再按需登记，其余规则交由静态基座配置或确定性检查机制承载：
 
-| Skill | 治理的可复发跑偏 | 启用方式 | 理论出处 |
+| Skill | 治理的可复发跑偏 | 启用方式 | 理论与案例出处 |
 | --- | --- | --- | --- |
-| Git 提审整合 | 本地反复 Attempt 混入产品主干、入仓前漏变基或漏筛公开敏感信息 | 开放 | [提交的 Integration](../theory/git/commit.md#integration)、[仓库的 Visibility](../theory/git/repository.md#visibility) |
-| Git 收口清退 | 漏提宿主仓记录、误夹他人改动、已合入工作树滞留或漏查范围外写入 | 开放 | [提交的 Ownership](../theory/git/commit.md#ownership)、[工作树的 Audit](../theory/git/worktree.md#audit)、[收口](../theory/delivery/closeout.md) |
-| Issue 编写 | 混写原因推断与事实、漏写发生条件或把验证实现细节塞进问题单 | 显式 | [Issue](../theory/delivery/issue.md)、[Colleague](../theory/documentation/audience/human/colleague.md) |
-| PR 准备与合入 | 漏核变更基线、描述流于内部术语、或合入后未回流有效修复 | 显式 | [提交](../theory/git/commit.md)、[理解负担](../theory/communication/load.md) |
-| Stack PR 协调 | 依赖链基线漂移、级联变基错序或上游合入后下游未同步更新 | 显式 | [工作树](../theory/git/worktree.md)、[提交的 Integration](../theory/git/commit.md#integration) |
-| Release 发布 | 混淆构建成功与部署生效、漏记一次性运维回执或部分失败后盲目重放 | 显式 | [验收的 Separate](../theory/delivery/acceptance.md#separate)、[Effect](../theory/agency/effect.md) |
-| Delivery 阶段汇报 | 把切片关闭当成目标完成、汇报未区分工作范围或缺少可定位证据入口 | 显式 | [交付](../theory/delivery/index.md)、[工作范围](../theory/delivery/coverage.md)、[收口](../theory/delivery/closeout.md) |
-| 工程验证 | 用测试替身绿灯替代真实消费者验收、混淆三层完成度或把故障注入当自然复现 | 开放 | [验收](../theory/delivery/acceptance.md)、[Spec 的 Seams](../theory/delivery/spec.md#seams) |
+| Git 收口清退 | 漏提宿主仓记录、误夹他人改动、已合入工作树滞留或漏查范围外写入 | 开放 | [变更的 Review](../theory/delivery/change.md#review)、[收口](../theory/delivery/closeout.md)、[Git 规约](git.md)、[探针范围外写入](../cases/test-output-outside-task.md)、[保留误作处置](../cases/preservation-is-not-disposition.md) |
+| Delivery 阶段汇报 | 把切片关闭当成目标完成、汇报流于内部术语或缺少可定位证据入口 | 显式 | [交付](../theory/delivery/index.md)、[工作范围](../theory/delivery/coverage.md)、[理解负担](../theory/communication/load.md)、[交付说明过于抽象](../cases/abstract-delivery.md) |
+| 工程验证 | 用测试替身绿灯替代真实消费者验收、混淆三层完成度或把故障注入当自然复现 | 开放 | [验收](../theory/delivery/acceptance.md)、[Spec 的 Seams](../theory/delivery/spec.md#seams)、[测试替身掩盖存储契约](../cases/storage-contract-mismatch.md) |
 
 ## Retirement
 

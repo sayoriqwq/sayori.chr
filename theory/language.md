@@ -21,9 +21,9 @@ validity: confirmed
 - **细节**：已有的词承担了它的作用，它是那个词的细节，写进所属词的定义或专题
 - **取值**：它是某个更根本的词在特定条件下的取值或形式，找出并使用那个根本词
 
-> 例：Instruction 是 Intent 的取值，Delegate 是 Handoff 的方向，它们写在根本词的定义里
+> 例：具体指令形态写在指令概念的定义里，交接方向写在交接概念的定义里
 
-新词条经 user 确认。这与[书写的 Naming](documentation/writing.md#naming) 是同一原则：先找出根本的词，再命名
+新词条经 user 确认。命名先找出根本的词，再按单一职责赋予清晰标识
 
 ## Context
 
