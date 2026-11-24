@@ -12,9 +12,9 @@ validity: confirmed
 
 | 上游依据 | 落实载体 | 在工作区基座中的具体形态 |
 | --- | --- | --- |
-| [变更的 Carrier](../theory/delivery/change.md#carrier) | 静态基座配置 | 工作区薄入口扩展槽显式声明产品仓与版本化记录宿主仓的公开性，标准 `.gitignore` 按四类职责分层 |
+| [变更的 Carrier](../theory/delivery/change.md#carrier) | 静态基座配置 | 工作区薄入口扩展槽显式声明产品仓与版本化记录宿主仓的公开性，标准 `.gitignore` 按五类职责分层 |
 | [变更的 Review](../theory/delivery/change.md#review) | 静态基座配置 | 工作区基座常驻声明 user 差异审阅窗口纪律与收口必落盘约束 |
-| [变更的 Isolation](../theory/delivery/change.md#isolation) | 确定性检查机制 | 接入工作区环境端口的轻量巡检机制，扫描本区已合入工作树、未忽略嵌套仓与超阈值大文件 |
+| [变更的 Isolation](../theory/delivery/change.md#isolation) | 确定性检查机制 | 工作区基座独立的轻量确定性巡检脚本，扫描本区已合入工作树、未忽略嵌套仓与超阈值大文件，独立于协作层运行 |
 | [变更的 Integration](../theory/delivery/change.md#integration) | 工程流程与按需 Skill | 提审或合入主干前基于目标主干变基，按文件级粗粒度重整为 Conventional Commits 语义提交并甄别公开泄露 |
 | [变更的 Review](../theory/delivery/change.md#review)与[收口](../theory/delivery/closeout.md) | 独立工程 Skill | Git 收口清退 Skill，落实 Mate 分权提交、冲突升级 Firstmate、保护他人未提交现场与四步工作树清退核查 |
 
