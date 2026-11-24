@@ -31,8 +31,8 @@ OpenKnowledge 是知识图谱，本仓期望概念聚合、统一。所以这里
 | --- | --- |
 | `derive.mjs` | 核对受管页面字段齐全，生成模块表、目录说明与[断言总览](assertions.md)，见 [Frontmatter 的 Generated](frontmatter.md#generated)。带上 `--fix` 参数写回 |
 | `links.mjs` | 核对本仓 Markdown 的相对链接与锚点 |
-| `lint.mjs` | 核对不动点无环 DAG、理论单向独立、实现名零泄漏与写作硬格式红线，见 [Lint](lint.md) |
+| `lint.mjs` | 核对不动点无环 DAG、理论零向下链接与纯标点硬格式，见 [Lint](lint.md) |
 
-修改受管页面后运行 `node .ok/scripts/derive.mjs --fix`，提交前依次运行 `node .ok/scripts/derive.mjs`、`node .ok/scripts/links.mjs` 与 `node .ok/scripts/lint.mjs` 核对
+修改受管页面后运行 `node .ok/scripts/derive.mjs --fix`，提交前依次运行 `node .ok/scripts/derive.mjs`、`node .ok/scripts/links.mjs` 与 `node .ok/scripts/lint.mjs` 核对。本仓常驻维护脚本按体系主技术栈统一以 Node.js ESM 编写
 
 [OpenKnowledge](index.md)

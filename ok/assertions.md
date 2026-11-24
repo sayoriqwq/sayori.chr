@@ -13,7 +13,7 @@ validity: confirmed
 | 模块 | 阶段 | 断言 |
 | --- | --- | --- |
 | [词表](../GLOSSARY.md) | `confirmed` | 本页汇总 Sayori 理论全部已确认建模概念的紧凑定义与语言白名单，权威定义在各词链接的理论页，全仓与外层工作区统一以此为准 |
-| [愿景](../VISION.md) | `confirmed` | Sayori 致力于让单个责任人以团队的杠杆率运作多 agent 协作，在安心移开注意力的同时保持完全掌控。机制守卫确定性事实，agent 承担理解与语义判断，理论与设计以本体正交与公理纯度为最高准绳 |
+| [愿景](../VISION.md) | `confirmed` | Sayori 致力于让单个责任人以团队的杠杆率运作多 agent 协作，在安心移开注意力的同时保持完全掌控。程序守卫硬边界机制，agent 处理软语义扩展，理论与设计以本体正交与公理纯度为最高准绳 |
 
 ## Theory
 
@@ -99,7 +99,7 @@ validity: confirmed
 | [工作区基座](../dev/index.md) | `confirmed` | 工作区基座是成品的工作区基础装配方案，向上落实理论，向内接入协作层基础实现，并按决策性质将工程规约落实为静态基座配置、确定性检查机制与独立工程 Skill，全部理论真源与出处说明留在本仓 |
 | [工程 Skill](../dev/skills.md) | `confirmed` | 工作区基座交付的每份工程 Skill 都是具备独立身份与完全自包含的可分发包，消费工作区通过薄适配按名称组合并只收紧不放宽，仅登记已有真实案例支撑的治理型 Skill，理论出处统一维护于本页 |
 | [校验基建](../dev/verification.md) | `confirmed` | 工作区校验基建严格分离内容完成、接入完成与使用验证，测试优先守卫架构扩展点、端口契约与协议不变量，并以轻量确定性检查机制承担机械可判定的结构与卫生自检 |
-| [工作区](../dev/workspace.md) | `confirmed` | 成品工作区基座落实 Workspace 的独立逻辑边界，采用单层平铺任务区与薄入口骨架，统一接入协作层并引用上游愿景与词表，具体工作区仅填入四个扩展槽即可运行 |
+| [工作区](../dev/workspace.md) | `confirmed` | 成品工作区基座落实 Workspace 的独立逻辑边界，根部特殊文件直接遵循特殊文件名理论，基座补充单层平铺任务区、协作数据目录与忽略基座，具体工作区仅填入四个扩展槽即可运行 |
 
 ## Cases
 
@@ -133,6 +133,6 @@ validity: confirmed
 | [Convergence](convergence.md) | `confirmed` | AGENTS.md 写规则，脚本做核对，两者只让本仓内容收敛。它们不是进化里的 Runtime，本仓不转反馈回路 |
 | [Frontmatter](frontmatter.md) | `confirmed` | 文档入口的四项落在 frontmatter 的四个字段。路由与目录说明从字段生成，不手写。confirmed 只征求一次 |
 | [OpenKnowledge](index.md) | `confirmed` | 这里是本仓用 OpenKnowledge 的收敛规则。它不属于理论，也不是进化里的 Runtime，理论不依赖它 |
-| [Lint](lint.md) | `confirmed` | 确定性结构脚本负责每次提交的机械红线核对，定期语义本体巡检从愿景、本体论与第一性原理审视跨领域碰撞与抽象泄漏，两层分工守住理论扩张不腐化 |
+| [Lint](lint.md) | `confirmed` | 确定性硬边界脚本守卫零语义歧义的依赖图与标点红线，定期软语义巡检从愿景、本体论与第一性原理审视并列命名、抽象泄漏、中间态混入与跨领域碰撞，两层按用途分界守住理论扩张 |
 
 [OpenKnowledge](index.md)

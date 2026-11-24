@@ -27,17 +27,17 @@ validity: confirmed
 
 | 议题 | 理论出处 | 上游规范 |
 | --- | --- | --- |
-| 形态与载体分级 | [派生](../theory/evolution/derivation.md#runtime) | [形态](architecture.md) |
-| 通知与唤醒分级 | [职责树](../theory/agency/crew.md#notify) | [唤醒](wake.md) |
+| 运行形态 | [派生](../theory/evolution/derivation.md#runtime) | [形态](architecture.md) |
+| 唤醒分级 | [职责树](../theory/agency/crew.md#notify) | [唤醒](wake.md) |
 | Effect 登记契约 | [Effect](../theory/agency/effect.md#register) | [记录的 Contracts](records.md#contracts) |
 | 批准记录契约 | [批准](../theory/agency/approval.md) | [记录的 Contracts](records.md#contracts) |
 | 决定记录回执 | [决定](../theory/communication/decision.md#record) | [记录的 Contracts](records.md#contracts) |
 | 工作范围呈现分级 | [工作范围](../theory/delivery/coverage.md#expression) | [记录的 Contracts](records.md#contracts) |
-| 进化回路与精选案例 | [进化](../theory/evolution/index.md#loop) | [回路](loop.md) |
+| 进化回路 | [进化](../theory/evolution/index.md#loop) | [回路](loop.md) |
 | 派生物出处追溯 | [派生](../theory/evolution/derivation.md#provenance) | [回路的 Provenance](loop.md#provenance) |
 | Skill 共享分发 | [Skill](../theory/skill/index.md) | [消费的 Distribution](consumer.md#distribution) |
-| Issue 指针与归属 | [Issue](../theory/delivery/issue.md#selection) | [记录的 Contracts](records.md#contracts)，细则归[工程层](../dev/index.md) |
-| Ticket 指针与归属 | [Ticket](../theory/delivery/ticket.md#composition) | [记录的 Contracts](records.md#contracts)，细则归[工程层](../dev/index.md) |
+| Issue 指针归属 | [Issue](../theory/delivery/issue.md#selection) | [记录的 Contracts](records.md#contracts)，细则归[工作区基座](../dev/index.md) |
+| Ticket 指针归属 | [Ticket](../theory/delivery/ticket.md#composition) | [记录的 Contracts](records.md#contracts)，细则归[工作区基座](../dev/index.md) |
 | 提问呈现格式 | [引领](../theory/communication/leadership.md#questions) | [消息的 Asking](message.md#asking) |
 
 ## Modules

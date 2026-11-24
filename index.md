@@ -6,7 +6,8 @@
 
 - **先理论，后实现**：理论定稿成本低，实现固化后再改代价大。两者同时推进会让改动失去可追踪性
 - **理论集中声明**：全部跨实现恒成立的原理集中声明在本仓 [theory/](theory/index.md)，下游运行产物经[派生](theory/evolution/derivation.md)形成并可追溯到理论
-- **设计与理论分开**：协作层怎样落实理论写在 [runtime/](runtime/index.md)，成品工作区基座怎样装配与落实工程规约写在 [dev/](dev/index.md)，均经 user 确认，[进化](theory/evolution/index.md)的回路靠实际使用转起来
+- **设计分置**：协作层设计写在 [runtime/](runtime/index.md)，工作区基座设计写在 [dev/](dev/index.md)，均经 user 确认，[进化](theory/evolution/index.md)的回路靠实际使用转起来
+- **自举组织**：本仓根部的特殊文件布局自举遵循[特殊文件名](theory/documentation/special-filenames.md)及[工作区基座](dev/workspace.md)的基础规范，以自身验证上游设计的一致性
 
 ## Layout
 

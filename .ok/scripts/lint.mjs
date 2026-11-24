@@ -1,8 +1,8 @@
 /**
- * OpenKnowledge 结构与写作硬规则确定性 lint
+ * OpenKnowledge 确定性硬边界 lint
  *
- * 守卫可机械判定的架构与写作红线，与 derive.mjs、links.mjs 配套运行。
- * 定期语义与本体论审查规约见 ok/lint.md
+ * 严格遵循「程序做硬机制，模型做软语义」：只守卫零语义歧义的结构依赖图与标点硬格式。
+ * 实体并列命名、中间态混入、实现抽象泄漏等软语义审查归属 ok/lint.md
  *
  * 用法：node .ok/scripts/lint.mjs
  * 有违例时打印具体位置并以非零状态退出
@@ -54,12 +54,6 @@ const UPPER_DOMAIN_PREFIXES = [
   "cases/",
 ];
 
-const THEORY_BANNED_IMPL =
-  /\b(sayori\.run|sayori\.dev|Herdr|EffectTS|Node\.js|Python|TypeScript|JavaScript)\b|\.sayori\/|task\/<name>/;
-
-const INTERMEDIATE_WORDING =
-  /\bv[12]\b|首版实现|迁移期|过渡期|暂不建设|本轮暂不|历史遗留兼容/;
-
 const violations = [];
 
 function resolveLinkTarget(fromFile, rawTarget) {
@@ -72,7 +66,6 @@ for (const file of MANAGED_FILES) {
   const lines = fs.readFileSync(file, "utf8").split("\n");
   const isFixedPoint = FIXED_POINTS.has(file) || file.startsWith("theory/primitive/");
   const isTheory = file.startsWith("theory/");
-  const isCase = file.startsWith("cases/");
   let inCode = false;
   let inFrontmatter = false;
 
@@ -92,10 +85,6 @@ for (const file of MANAGED_FILES) {
         if (/[;；]/.test(val)) violations.push(`${file}:${lineNo} [semicolon] frontmatter 含分号`);
         if (/。$/.test(val)) violations.push(`${file}:${lineNo} [trailing-period] frontmatter 结尾含句号`);
         if (/[（）()]/.test(val)) violations.push(`${file}:${lineNo} [parentheses] frontmatter 含括号`);
-        if (!isCase && INTERMEDIATE_WORDING.test(val)) violations.push(`${file}:${lineNo} [intermediate] frontmatter 含阶段过渡措辞`);
-        if (isTheory && THEORY_BANNED_IMPL.test(val)) {
-          violations.push(`${file}:${lineNo} [impl-leak] theory frontmatter 含具体实现名`);
-        }
       }
       return;
     }
@@ -129,15 +118,6 @@ for (const file of MANAGED_FILES) {
     }
     if (/[（）()]/.test(stripped)) {
       violations.push(`${file}:${lineNo} [parentheses] 正文含括号`);
-    }
-    if (/^#+\s.*与/.test(stripped)) {
-      violations.push(`${file}:${lineNo} [parallel-heading] 标题含并列命名`);
-    }
-    if (!isCase && INTERMEDIATE_WORDING.test(stripped)) {
-      violations.push(`${file}:${lineNo} [intermediate] 含阶段过渡措辞`);
-    }
-    if (isTheory && THEORY_BANNED_IMPL.test(line)) {
-      violations.push(`${file}:${lineNo} [impl-leak] theory 正文含具体实现或工具名`);
     }
   });
 }
